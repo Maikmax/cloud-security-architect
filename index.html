@@ -41,567 +41,229 @@
       top: 0;
       z-index: 100;
     }
-
-    .nav-brand {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--accent);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--muted2);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-
+    .nav-brand { font-size: 1rem; font-weight: 700; color: var(--accent); letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
+    .nav-links a { color: var(--muted2); text-decoration: none; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover { color: var(--accent); }
 
     /* ── HERO ── */
-    .hero {
-      padding: 5rem 3rem 4rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .hero-tag {
-      display: inline-block;
-      background: rgba(14,165,233,0.1);
-      border: 1px solid rgba(14,165,233,0.3);
-      color: var(--accent);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.35rem 0.9rem;
-      border-radius: 999px;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero h1 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 800;
-      line-height: 1.15;
-      margin-bottom: 1.25rem;
-      letter-spacing: -0.02em;
-    }
-
-    .hero h1 span {
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-sub {
-      font-size: 1.05rem;
-      color: var(--muted2);
-      max-width: 680px;
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
-    }
-
-    .hero-stats {
-      display: flex;
-      gap: 2.5rem;
-      flex-wrap: wrap;
-    }
-
-    .stat {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-
-    .stat-value {
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: var(--accent);
-    }
-
-    .stat-label {
-      font-size: 0.75rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
+    .hero { padding: 5rem 3rem 4rem; max-width: 1100px; margin: 0 auto; }
+    .hero-tag { display: inline-block; background: rgba(14,165,233,0.1); border: 1px solid rgba(14,165,233,0.3); color: var(--accent); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 999px; margin-bottom: 1.5rem; }
+    .hero h1 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 1.25rem; letter-spacing: -0.02em; }
+    .hero h1 span { background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-sub { font-size: 1.05rem; color: var(--muted2); max-width: 680px; line-height: 1.7; margin-bottom: 2.5rem; }
+    .hero-stats { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+    .stat { display: flex; flex-direction: column; gap: 0.25rem; }
+    .stat-value { font-size: 1.6rem; font-weight: 800; color: var(--accent); }
+    .stat-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
 
     /* ── SECTION ── */
-    .section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 3rem;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .section-tag {
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      background: rgba(14,165,233,0.08);
-      border: 1px solid rgba(14,165,233,0.2);
-      padding: 0.2rem 0.6rem;
-      border-radius: 4px;
-    }
-
-    .section-title {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--text);
-    }
+    .section { max-width: 1100px; margin: 0 auto; padding: 3rem; }
+    .section-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+    .section-tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); background: rgba(14,165,233,0.08); border: 1px solid rgba(14,165,233,0.2); padding: 0.2rem 0.6rem; border-radius: 4px; }
+    .section-title { font-size: 1.3rem; font-weight: 700; color: var(--text); }
 
     /* ── PROGRESS BAR ── */
-    .progress-wrapper {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 2rem;
-      margin-bottom: 3rem;
-    }
-
-    .progress-title {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--muted2);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 1.25rem;
-    }
-
-    .phases-bar {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .phase-segment {
-      height: 8px;
-      border-radius: 4px;
-      background: var(--border);
-      overflow: hidden;
-      cursor: pointer;
-      transition: opacity 0.2s;
-    }
-
+    .progress-wrapper { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin-bottom: 3rem; }
+    .progress-title { font-size: 0.85rem; font-weight: 700; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+    .progress-subtitle { font-size: 0.78rem; color: var(--muted); margin-bottom: 1.25rem; }
+    .phases-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-bottom: 1rem; }
+    .phase-segment { height: 8px; border-radius: 4px; background: var(--border); overflow: hidden; cursor: pointer; transition: opacity 0.2s; }
     .phase-segment:hover { opacity: 0.8; }
-
-    .phase-fill {
-      height: 100%;
-      border-radius: 4px;
-      transition: width 1s ease;
-    }
-
-    .phase-labels {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0.5rem;
-    }
-
-    .phase-label {
-      font-size: 0.72rem;
-      color: var(--muted);
-      text-align: center;
-    }
+    .phase-fill { height: 100%; border-radius: 4px; transition: width 1s ease; }
+    .phase-labels { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-bottom: 1.5rem; }
+    .phase-label { font-size: 0.72rem; color: var(--muted); text-align: center; }
+    .progress-controls { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .progress-btn { padding: 0.4rem 1rem; border-radius: 6px; border: 1px solid var(--border); background: var(--surface2); color: var(--muted2); font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+    .progress-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .progress-pct { font-size: 1.4rem; font-weight: 800; color: var(--accent3); margin-left: auto; }
 
     /* ── ROADMAP PHASES ── */
-    .phases-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.25rem;
-      margin-bottom: 3rem;
-    }
-
-    .phase-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.5rem;
-      position: relative;
-      overflow: hidden;
-      transition: border-color 0.2s, transform 0.2s;
-      cursor: pointer;
-    }
-
-    .phase-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-2px);
-    }
-
+    .phases-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; margin-bottom: 3rem; }
+    .phase-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; position: relative; overflow: hidden; transition: border-color 0.2s, transform 0.2s; cursor: pointer; }
+    .phase-card:hover { border-color: var(--accent); transform: translateY(-2px); }
     .phase-card.active { border-color: var(--accent); }
     .phase-card.done { border-color: var(--accent3); }
-
-    .phase-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-    }
-
-    .phase-card.done::before {
-      background: var(--accent3);
-    }
-
-    .phase-num {
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-
+    .phase-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2)); }
+    .phase-card.done::before { background: var(--accent3); }
+    .phase-num { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.5rem; }
     .phase-card.done .phase-num { color: var(--accent3); }
-
-    .phase-name {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 0.3rem;
-    }
-
-    .phase-weeks {
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-bottom: 1rem;
-    }
-
-    .phase-items {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-
-    .phase-items li {
-      font-size: 0.82rem;
-      color: var(--muted2);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .phase-items li::before {
-      content: '';
-      width: 5px;
-      height: 5px;
-      background: var(--accent);
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
+    .phase-name { font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .phase-weeks { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+    .phase-items { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+    .phase-items li { font-size: 0.82rem; color: var(--muted2); display: flex; align-items: center; gap: 0.5rem; }
+    .phase-items li::before { content: ''; width: 5px; height: 5px; background: var(--accent); border-radius: 50%; flex-shrink: 0; }
     .phase-card.done .phase-items li::before { background: var(--accent3); }
 
+    /* ── WEEKLY BREAKDOWN ── */
+    .week-accordion { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 3rem; }
+    .week-item { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .week-header { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.5rem; cursor: pointer; transition: background 0.2s; }
+    .week-header:hover { background: var(--surface2); }
+    .week-num { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); background: rgba(14,165,233,0.1); border: 1px solid rgba(14,165,233,0.2); padding: 0.2rem 0.6rem; border-radius: 4px; white-space: nowrap; }
+    .week-title { font-size: 0.9rem; font-weight: 700; flex: 1; }
+    .week-phase-badge { font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; }
+    .badge-p1 { background: rgba(14,165,233,0.12); color: #0ea5e9; }
+    .badge-p2 { background: rgba(99,102,241,0.12); color: #818cf8; }
+    .badge-p3 { background: rgba(167,139,250,0.12); color: #c4b5fd; }
+    .badge-p4 { background: rgba(16,185,129,0.12); color: #34d399; }
+    .week-arrow { color: var(--muted); font-size: 0.8rem; transition: transform 0.2s; }
+    .week-item.open .week-arrow { transform: rotate(90deg); }
+    .week-body { display: none; padding: 0 1.5rem 1.25rem; }
+    .week-item.open .week-body { display: block; }
+    .week-body-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .week-col-title { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.6rem; }
+    .week-task-list { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+    .week-task-list li { font-size: 0.82rem; color: var(--muted2); display: flex; align-items: flex-start; gap: 0.5rem; line-height: 1.4; }
+    .week-task-list li::before { content: '→'; color: var(--accent); font-size: 0.7rem; flex-shrink: 0; margin-top: 2px; }
+    .week-deliverable { margin-top: 0.75rem; padding: 0.6rem 0.9rem; background: rgba(16,185,129,0.07); border: 1px solid rgba(16,185,129,0.2); border-radius: 6px; font-size: 0.8rem; color: #34d399; }
+    .week-deliverable strong { color: #6ee7b7; }
+
     /* ── PROJECTS ── */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.25rem;
-      margin-bottom: 3rem;
-    }
-
-    .project-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.5rem;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-
-    .project-card:hover {
-      border-color: var(--accent2);
-      transform: translateY(-2px);
-    }
-
-    .project-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 0.75rem;
-    }
-
-    .project-icon {
-      font-size: 1.5rem;
-    }
-
-    .project-level {
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 0.2rem 0.6rem;
-      border-radius: 4px;
-    }
-
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem; margin-bottom: 3rem; }
+    .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; transition: border-color 0.2s, transform 0.2s; }
+    .project-card:hover { border-color: var(--accent2); transform: translateY(-2px); }
+    .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; }
+    .project-icon { font-size: 1.5rem; }
+    .project-level { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.2rem 0.6rem; border-radius: 4px; }
     .level-senior { background: rgba(239,68,68,0.15); color: #fc8181; }
     .level-mid    { background: rgba(245,158,11,0.15); color: #fbbf24; }
     .level-core   { background: rgba(16,185,129,0.15); color: #34d399; }
-
-    .project-name {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 0.4rem;
-    }
-
-    .project-desc {
-      font-size: 0.83rem;
-      color: var(--muted2);
-      line-height: 1.6;
-      margin-bottom: 1rem;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
-
-    .tag {
-      font-size: 0.7rem;
-      font-weight: 600;
-      padding: 0.2rem 0.55rem;
-      border-radius: 4px;
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      color: var(--muted2);
-    }
+    .project-name { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .project-desc { font-size: 0.83rem; color: var(--muted2); line-height: 1.6; margin-bottom: 0.75rem; }
+    .project-arch { font-size: 0.78rem; color: var(--muted); background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 0.5rem 0.75rem; margin-bottom: 0.75rem; font-family: monospace; line-height: 1.8; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tag { font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.55rem; border-radius: 4px; background: var(--surface2); border: 1px solid var(--border); color: var(--muted2); }
 
     /* ── STACK ── */
-    .stack-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-bottom: 3rem;
-    }
+    .stack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
+    .stack-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; }
+    .stack-category { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.75rem; }
+    .stack-items { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+    .stack-items li { font-size: 0.82rem; color: var(--muted2); display: flex; align-items: center; gap: 0.5rem; }
+    .stack-items li::before { content: '→'; color: var(--accent); font-size: 0.7rem; }
 
-    .stack-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.25rem;
-    }
+    /* ── CERTS ── */
+    .certs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
+    .cert-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; }
+    .cert-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem; }
+    .cert-name { font-size: 0.92rem; font-weight: 700; }
+    .cert-priority { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.15rem 0.5rem; border-radius: 4px; }
+    .priority-must { background: rgba(239,68,68,0.15); color: #fc8181; }
+    .priority-high { background: rgba(245,158,11,0.15); color: #fbbf24; }
+    .priority-bonus { background: rgba(99,102,241,0.15); color: #a5b4fc; }
+    .cert-body { font-size: 0.8rem; color: var(--muted2); line-height: 1.5; margin-bottom: 0.6rem; }
+    .cert-timeline { font-size: 0.75rem; color: var(--muted); }
+    .cert-timeline strong { color: var(--accent3); }
 
-    .stack-category {
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      margin-bottom: 0.75rem;
-    }
+    /* ── ATTACK LABS ── */
+    .labs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; margin-bottom: 3rem; }
+    .lab-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; border-left: 4px solid var(--danger); }
+    .lab-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem; }
+    .lab-name { font-size: 0.95rem; font-weight: 700; }
+    .lab-type { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; padding: 0.15rem 0.5rem; border-radius: 4px; background: rgba(239,68,68,0.12); color: #fc8181; }
+    .lab-desc { font-size: 0.82rem; color: var(--muted2); line-height: 1.5; margin-bottom: 0.75rem; }
+    .lab-scenarios { list-style: none; display: flex; flex-direction: column; gap: 0.3rem; }
+    .lab-scenarios li { font-size: 0.78rem; color: var(--muted2); display: flex; align-items: center; gap: 0.5rem; }
+    .lab-scenarios li::before { content: '⚠'; color: var(--warning); font-size: 0.7rem; }
 
-    .stack-items {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-    }
+    /* ── BIG TECH ── */
+    .bigtech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; margin-bottom: 3rem; }
+    .bigtech-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; }
+    .bigtech-logo { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.4rem; }
+    .bigtech-role { font-size: 0.78rem; color: var(--muted2); margin-bottom: 0.75rem; }
+    .bigtech-salary { font-size: 1.1rem; font-weight: 800; color: var(--accent3); margin-bottom: 1rem; }
+    .bigtech-reqs { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+    .bigtech-reqs li { font-size: 0.8rem; color: var(--muted2); display: flex; align-items: center; gap: 0.5rem; }
+    .bigtech-reqs li::before { content: ''; width: 5px; height: 5px; background: var(--accent); border-radius: 50%; flex-shrink: 0; }
 
-    .stack-items li {
-      font-size: 0.82rem;
-      color: var(--muted2);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .stack-items li::before {
-      content: '→';
-      color: var(--accent);
-      font-size: 0.7rem;
-    }
+    /* ── INTERVIEW ── */
+    .interview-list { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 3rem; }
+    .interview-item { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .interview-q { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem 1.5rem; cursor: pointer; transition: background 0.2s; }
+    .interview-q:hover { background: var(--surface2); }
+    .interview-num { font-size: 0.7rem; font-weight: 800; color: var(--accent); background: rgba(14,165,233,0.1); border: 1px solid rgba(14,165,233,0.2); padding: 0.2rem 0.5rem; border-radius: 4px; flex-shrink: 0; }
+    .interview-text { font-size: 0.88rem; font-weight: 600; flex: 1; line-height: 1.4; }
+    .interview-arrow { color: var(--muted); font-size: 0.8rem; transition: transform 0.2s; flex-shrink: 0; }
+    .interview-item.open .interview-arrow { transform: rotate(90deg); }
+    .interview-answer { display: none; padding: 0 1.5rem 1.25rem; font-size: 0.83rem; color: var(--muted2); line-height: 1.7; border-top: 1px solid var(--border); margin-top: 0; padding-top: 1rem; }
+    .interview-item.open .interview-answer { display: block; }
+    .interview-answer strong { color: var(--accent); }
 
     /* ── SALARY ── */
-    .salary-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-bottom: 3rem;
-    }
-
-    .salary-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.5rem;
-      text-align: center;
-    }
-
-    .salary-level {
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--muted);
-      margin-bottom: 0.5rem;
-    }
-
-    .salary-value {
-      font-size: 1.4rem;
-      font-weight: 800;
-      margin-bottom: 0.25rem;
-    }
-
+    .salary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
+    .salary-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; text-align: center; }
+    .salary-level { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.5rem; }
+    .salary-value { font-size: 1.4rem; font-weight: 800; margin-bottom: 0.25rem; }
     .salary-card.target .salary-value { color: var(--accent3); }
     .salary-card.mid .salary-value    { color: var(--accent); }
     .salary-card.top .salary-value    { color: #a78bfa; }
-
-    .salary-location {
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
+    .salary-location { font-size: 0.75rem; color: var(--muted); }
 
     /* ── MOTIVATION ── */
-    .motivation-box {
-      background: linear-gradient(135deg, rgba(14,165,233,0.07), rgba(99,102,241,0.07));
-      border: 1px solid rgba(14,165,233,0.2);
-      border-radius: 16px;
-      padding: 2.5rem;
-      margin-bottom: 3rem;
-      text-align: center;
-    }
-
-    .motivation-quote {
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: var(--text);
-      line-height: 1.7;
-      max-width: 700px;
-      margin: 0 auto 1.5rem;
-    }
-
+    .motivation-box { background: linear-gradient(135deg, rgba(14,165,233,0.07), rgba(99,102,241,0.07)); border: 1px solid rgba(14,165,233,0.2); border-radius: 16px; padding: 2.5rem; margin-bottom: 3rem; text-align: center; }
+    .motivation-quote { font-size: 1.15rem; font-weight: 600; color: var(--text); line-height: 1.7; max-width: 700px; margin: 0 auto 1.5rem; }
     .motivation-quote span { color: var(--accent); }
+    .week-focus { display: inline-flex; align-items: center; gap: 0.75rem; background: rgba(14,165,233,0.1); border: 1px solid rgba(14,165,233,0.25); border-radius: 10px; padding: 0.75rem 1.5rem; }
+    .week-focus-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+    .week-focus-value { font-size: 0.9rem; font-weight: 700; color: var(--accent); }
 
-    .week-focus {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      background: rgba(14,165,233,0.1);
-      border: 1px solid rgba(14,165,233,0.25);
-      border-radius: 10px;
-      padding: 0.75rem 1.5rem;
-    }
-
-    .week-focus-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--muted);
-    }
-
-    .week-focus-value {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--accent);
-    }
+    /* ── ROUTINE ── */
+    .routine-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; margin-bottom: 3rem; }
+    .routine-day { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem; }
+    .routine-day-name { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.6rem; }
+    .routine-focus { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .routine-detail { font-size: 0.75rem; color: var(--muted2); line-height: 1.5; }
+    .routine-day.rest { border-color: rgba(16,185,129,0.3); }
+    .routine-day.rest .routine-day-name { color: var(--accent3); }
 
     /* ── CHECKLIST ── */
-    .checklist-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.25rem;
-      margin-bottom: 3rem;
-    }
-
-    .checklist-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.5rem;
-    }
-
-    .checklist-title {
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: var(--muted2);
-      margin-bottom: 1rem;
-    }
-
-    .checklist-item {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 0.5rem 0;
-      border-bottom: 1px solid var(--border);
-      cursor: pointer;
-    }
-
+    .checklist-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; margin-bottom: 3rem; }
+    .checklist-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; }
+    .checklist-title { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted2); margin-bottom: 1rem; }
+    .checklist-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; border-bottom: 1px solid var(--border); cursor: pointer; user-select: none; }
     .checklist-item:last-child { border-bottom: none; }
+    .check-box { width: 18px; height: 18px; border: 2px solid var(--border); border-radius: 4px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: all 0.2s; font-size: 0.7rem; }
+    .checklist-item.done .check-box { background: var(--accent3); border-color: var(--accent3); color: white; }
+    .check-text { font-size: 0.83rem; color: var(--muted2); transition: color 0.2s; line-height: 1.4; }
+    .checklist-item.done .check-text { color: var(--muted); text-decoration: line-through; }
 
-    .check-box {
-      width: 18px;
-      height: 18px;
-      border: 2px solid var(--border);
-      border-radius: 4px;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s;
-      font-size: 0.7rem;
-    }
+    /* ── CANVAS ── */
+    .canvas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-bottom: 3rem; }
+    .canvas-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; }
+    .canvas-num { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent2); margin-bottom: 0.4rem; }
+    .canvas-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .canvas-items { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+    .canvas-items li { font-size: 0.8rem; color: var(--muted2); display: flex; align-items: flex-start; gap: 0.5rem; line-height: 1.4; }
+    .canvas-items li::before { content: '·'; color: var(--accent2); font-size: 1rem; flex-shrink: 0; }
+    .canvas-sub { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-top: 0.75rem; margin-bottom: 0.4rem; }
 
-    .checklist-item.done .check-box {
-      background: var(--accent3);
-      border-color: var(--accent3);
-      color: white;
-    }
-
-    .check-text {
-      font-size: 0.83rem;
-      color: var(--muted2);
-      transition: color 0.2s;
-    }
-
-    .checklist-item.done .check-text {
-      color: var(--muted);
-      text-decoration: line-through;
-    }
+    /* ── RISKS/OPPS ── */
+    .risk-opp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 3rem; }
+    .risk-card { background: var(--surface); border: 1px solid rgba(239,68,68,0.25); border-radius: 14px; padding: 1.5rem; }
+    .opp-card  { background: var(--surface); border: 1px solid rgba(16,185,129,0.25); border-radius: 14px; padding: 1.5rem; }
+    .ro-title { font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; }
+    .risk-card .ro-title { color: #fc8181; }
+    .opp-card  .ro-title { color: #34d399; }
+    .ro-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .ro-list li { font-size: 0.83rem; color: var(--muted2); display: flex; align-items: flex-start; gap: 0.6rem; line-height: 1.4; }
+    .risk-card .ro-list li::before { content: '⚠'; font-size: 0.7rem; color: #f87171; flex-shrink: 0; margin-top: 1px; }
+    .opp-card  .ro-list li::before { content: '✦'; font-size: 0.7rem; color: #34d399; flex-shrink: 0; margin-top: 1px; }
 
     /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 2rem 3rem;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.8rem;
-    }
-
+    footer { border-top: 1px solid var(--border); padding: 2rem 3rem; text-align: center; color: var(--muted); font-size: 0.8rem; }
     footer strong { color: var(--muted2); }
 
     /* ── DIVIDER ── */
-    .divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 0 3rem;
-    }
+    .divider { border: none; border-top: 1px solid var(--border); margin: 0 3rem; }
 
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
       .hero, .section { padding: 2rem 1.5rem; }
       .nav-links { display: none; }
       .phases-bar, .phase-labels { grid-template-columns: repeat(2, 1fr); }
+      .week-body-grid { grid-template-columns: 1fr; }
+      .risk-opp-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -612,7 +274,12 @@
   <div class="nav-brand">Marcus Paula</div>
   <ul class="nav-links">
     <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#weekly">Weekly</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#labs">Labs</a></li>
+    <li><a href="#certs">Certs</a></li>
+    <li><a href="#bigtech">Big Tech</a></li>
+    <li><a href="#interview">Interview</a></li>
     <li><a href="#stack">Stack</a></li>
     <li><a href="#salary">Target</a></li>
   </ul>
@@ -626,22 +293,10 @@
     10 years of IT. Now going deep into Cloud Security Architecture — combining AWS security, DevSecOps, threat modeling, and AI security into a rare, high-value profile.
   </p>
   <div class="hero-stats">
-    <div class="stat">
-      <span class="stat-value">16</span>
-      <span class="stat-label">Weeks Total</span>
-    </div>
-    <div class="stat">
-      <span class="stat-value">7</span>
-      <span class="stat-label">Portfolio Projects</span>
-    </div>
-    <div class="stat">
-      <span class="stat-value">4</span>
-      <span class="stat-label">Specializations</span>
-    </div>
-    <div class="stat">
-      <span class="stat-value">€150k+</span>
-      <span class="stat-label">Target Salary</span>
-    </div>
+    <div class="stat"><span class="stat-value">16</span><span class="stat-label">Weeks Total</span></div>
+    <div class="stat"><span class="stat-value">7</span><span class="stat-label">Portfolio Projects</span></div>
+    <div class="stat"><span class="stat-value">4</span><span class="stat-label">Specializations</span></div>
+    <div class="stat"><span class="stat-value">€150k+</span><span class="stat-label">Target Salary</span></div>
   </div>
 </section>
 
@@ -671,11 +326,12 @@
 
   <div class="progress-wrapper">
     <div class="progress-title">Overall Progress</div>
+    <div class="progress-subtitle">Click a phase to mark it complete. Progress is saved in your browser.</div>
     <div class="phases-bar">
-      <div class="phase-segment"><div class="phase-fill" style="width:0%;background:linear-gradient(90deg,#0ea5e9,#6366f1)"></div></div>
-      <div class="phase-segment"><div class="phase-fill" style="width:0%;background:linear-gradient(90deg,#6366f1,#a78bfa)"></div></div>
-      <div class="phase-segment"><div class="phase-fill" style="width:0%;background:linear-gradient(90deg,#a78bfa,#10b981)"></div></div>
-      <div class="phase-segment"><div class="phase-fill" style="width:0%;background:#10b981"></div></div>
+      <div class="phase-segment" onclick="setPhase(0)"><div class="phase-fill" id="fill0" style="width:0%;background:linear-gradient(90deg,#0ea5e9,#6366f1)"></div></div>
+      <div class="phase-segment" onclick="setPhase(1)"><div class="phase-fill" id="fill1" style="width:0%;background:linear-gradient(90deg,#6366f1,#a78bfa)"></div></div>
+      <div class="phase-segment" onclick="setPhase(2)"><div class="phase-fill" id="fill2" style="width:0%;background:linear-gradient(90deg,#a78bfa,#10b981)"></div></div>
+      <div class="phase-segment" onclick="setPhase(3)"><div class="phase-fill" id="fill3" style="width:0%;background:#10b981"></div></div>
     </div>
     <div class="phase-labels">
       <span class="phase-label">Phase 1 — Foundation</span>
@@ -683,10 +339,18 @@
       <span class="phase-label">Phase 3 — Advanced</span>
       <span class="phase-label">Phase 4 — Architect</span>
     </div>
+    <div class="progress-controls">
+      <button class="progress-btn" onclick="setPhase(0)">Mark Phase 1</button>
+      <button class="progress-btn" onclick="setPhase(1)">Mark Phase 2</button>
+      <button class="progress-btn" onclick="setPhase(2)">Mark Phase 3</button>
+      <button class="progress-btn" onclick="setPhase(3)">Mark Phase 4</button>
+      <button class="progress-btn" onclick="resetProgress()">Reset</button>
+      <span class="progress-pct" id="progressPct">0%</span>
+    </div>
   </div>
 
   <div class="phases-grid">
-    <div class="phase-card active">
+    <div class="phase-card active" id="phaseCard0">
       <div class="phase-num">Phase 1 · Weeks 1–4</div>
       <div class="phase-name">AWS Security Foundation</div>
       <div class="phase-weeks">Build the base. No shortcuts.</div>
@@ -699,8 +363,7 @@
         <li>Zero Trust Landing Zone</li>
       </ul>
     </div>
-
-    <div class="phase-card">
+    <div class="phase-card" id="phaseCard1">
       <div class="phase-num">Phase 2 · Weeks 5–8</div>
       <div class="phase-name">DevSecOps & Automation</div>
       <div class="phase-weeks">Security embedded in pipeline.</div>
@@ -713,8 +376,7 @@
         <li>Auto-remediation Lambda</li>
       </ul>
     </div>
-
-    <div class="phase-card">
+    <div class="phase-card" id="phaseCard2">
       <div class="phase-num">Phase 3 · Weeks 9–12</div>
       <div class="phase-name">Containers & Runtime</div>
       <div class="phase-weeks">Where big tech operates.</div>
@@ -727,8 +389,7 @@
         <li>Network Policies</li>
       </ul>
     </div>
-
-    <div class="phase-card">
+    <div class="phase-card" id="phaseCard3">
       <div class="phase-num">Phase 4 · Weeks 13–16</div>
       <div class="phase-name">Architect Layer</div>
       <div class="phase-weeks">This is what pays €150k+.</div>
@@ -746,6 +407,536 @@
 
 <hr class="divider"/>
 
+<!-- WEEKLY BREAKDOWN -->
+<section class="section" id="weekly">
+  <div class="section-header">
+    <span class="section-tag">Weekly Plan</span>
+    <h2 class="section-title">Week by Week — What to Build</h2>
+  </div>
+
+  <div class="week-accordion">
+
+    <!-- PHASE 1 -->
+    <div class="week-item" onclick="toggleWeek(this)">
+      <div class="week-header">
+        <span class="week-num">Week 1</span>
+        <span class="week-title">AWS Multi-Account Setup + IAM Architecture</span>
+        <span class="week-phase-badge badge-p1">Phase 1</span>
+        <span class="week-arrow">▶</span>
+      </div>
+      <div class="week-body">
+        <div class="week-body-grid">
+          <div>
+            <div class="week-col-title">Study</div>
+            <ul class="week-task-list">
+              <li>AWS Organizations structure</li>
+              <li>Management account vs member accounts</li>
+              <li>Service Control Policies (SCP)</li>
+              <li>IAM Identity Center (SSO)</li>
+            </ul>
+          </div>
+          <div>
+            <div class="week-col-title">Build</div>
+            <ul class="week-task-list">
+              <li>Create 3-account structure: security / dev / prod</li>
+              <li>Apply SCP to restrict dangerous actions</li>
+              <li>Configure IAM Identity Center with groups</li>
+              <li>Document architecture in README</li>
+            </ul>
+          </div>
+        </div>
+        <div class="week-deliverable"><strong>GitHub deliverable:</strong> aws-zero-trust-landing-zone / week1-iam-multiacccount</div>
+      </div>
+    </div>
+
+    <div class="week-item" onclick="toggleWeek(this)">
+      <div class="week-header">
+        <span class="week-num">Week 2</span>
+        <span class="week-title">VPC Security + Network Segmentation</span>
+        <span class="week-phase-badge badge-p1">Phase 1</span>
+        <span class="week-arrow">▶</span>
+      </div>
+      <div class="week-body">
+        <div class="week-body-grid">
+          <div>
+            <div class="week-col-title">Study</div>
+            <ul class="week-task-list">
+              <li>VPC design patterns for security</li>
+              <li>NACL vs Security Groups — when to use each</li>
+              <li>VPC Flow Logs analysis</li>
+              <li>Private subnets + NAT Gateway</li>
+            </ul>
+          </div>
+          <div>
+            <div class="week-col-title">Build</div>
+            <ul class="week-task-list">
+              <li>Design 3-tier VPC (public / private / data)</li>
+              <li>Enable VPC Flow Logs → CloudWatch</li>
+              <li>Create NACLs blocking lateral movement</li>
+              <li>Draw architecture diagram (draw.io)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="week-deliverable"><strong>GitHub deliverable:</strong> vpc-security-architecture with diagram + Terraform</div>
+      </div>
+    </div>
+
+    <div class="week-item" onclick="toggleWeek(this)">
+      <div class="week-header">
+        <span class="week-num">Week 3</span>
+        <span class="week-title">Encryption Strategy + Secrets Management</span>
+        <span class="week-phase-badge badge-p1">Phase 1</span>
+        <span class="week-arrow">▶</span>
+      </div>
+      <div class="week-body">
+        <div class="week-body-grid">
+          <div>
+            <div class="week-col-title">Study</div>
+            <ul class="week-task-list">
+              <li>KMS key types (CMK, data keys)</li>
+              <li>Envelope encryption pattern</li>
+              <li>Secrets Manager vs Parameter Store</li>
+              <li>S3 encryption best practices</li>
+            </ul>
+          </div>
+          <div>
+            <div class="week-col-title">Build</div>
+            <ul class="week-task-list">
+              <li>Create CMK with key rotation policy</li>
+              <li>Encrypt S3, RDS, EBS with KMS</li>
+              <li>Store secrets with automatic rotation</li>
+              <li>Write KMS key policy denying root access</li>
+            </ul>
+          </div>
+        </div>
+        <div class="week-deliverable"><strong>GitHub deliverable:</strong> encryption-strategy-aws — policies + Terraform modules</div>
+      </div>
+    </div>
+
+    <div class="week-item" onclick="toggleWeek(this)">
+      <div class="week-header">
+        <span class="week-num">Week 4</span>
+        <span class="week-title">CloudTrail + GuardDuty + Security Hub</span>
+        <span class="week-phase-badge badge-p1">Phase 1</span>
+        <span class="week-arrow">▶</span>
+      </div>
+      <div class="week-body">
+        <div class="week-body-grid">
+          <div>
+            <div class="week-col-title">Study</div>
+            <ul class="week-task-list">
+              <li>CloudTrail org-level configuration</li>
+              <li>GuardDuty threat detection categories</li>
+              <li>Security Hub standards (CIS, FSBP)</li>
+              <li>Config rules for compliance</li>
+            </ul>
+          </div>
+          <div>
+            <div class="week-col-title">Build</div>
+            <ul class="week-task-list">
+              <li>Enable CloudTrail across all accounts</li>
+              <li>Enable GuardDuty + Security Hub</li>
+              <li>Create EventBridge rule for critical findings</li>
+              <li>Set up SNS alert for GuardDuty HIGH severity</li>
+            </ul>
+          </div>
+        </div>
+        <div class="week-deliverable"><strong>GitHub deliverable:</strong> aws-detection-baseline — Phase 1 complete project</div>
+      </div>
+    </div>
+
+    <!-- PHASE 2 -->
+    <div class="week-item" onclick="toggleWeek(this)">
+      <div class="week-header">
+        <span class="week-num">Week 5</span>
+        <span class="week-title">Terraform Security + IaC Scanning</span>
+        <span class="week-phase-badge badge-p2">Phase 2</span>
+        <span class="week-arrow">▶</span>
+      </div>
+      <div class="week-body">
+        <div class="week-body-grid">
+          <div>
+            <div class="week-col-title">Study</div>
+            <ul class="week-task-list">
+              <li>Terraform modules for security</li>
+              <li>Checkov security rules for AWS</li>
+              <li>tfsec ruleset</li>
+              <li>Terraform state security (S3 + DynamoDB)</li>
+            </ul>
+          </div>
+          <div>
+            <div class="week-col-title">Build</div>
+            <ul class="week-task-list">
+              <li>Write secure VPC module in Terraform</li>
+              <li>Run Checkov — fix all HIGH findings</li>
+              <li>Secure state bucket with encryption + versioning</li>
+              <li>Create reusable IAM role module</li>
+            </ul>
+          </div>
+        </div>
+        <div class="week-deliverable"><strong>GitHub deliverable:</strong> terraform-secure-modules — IaC with zero Checkov HIGH findings</div>
+      </div>
+    </div>
+
+    <div class="week-item" onclick="toggleWeek(this)">
+      <div class="week-header">
+        <span class="week-num">Week 6</span>
+        <span class="week-title">GitHub Actions + OIDC + CI/CD Security</span>
+        <span class="week-phase-badge badge-p2">Phase 2</span>
+        <span class="week-arrow">▶</span>
+      </div>
+      <div class="week-body">
+        <div class="week-body-grid">
+          <div>
+            <div class="week-col-title">Study</div>
+            <ul class="week-task-list">
+              <li>OIDC authentication for GitHub Actions</li>
+              <li>Least privilege IAM roles for CI/CD</li>
+              <li>Secrets scanning in pipelines</li>
+              <li>Supply chain security (SBOM)</li>
+            </ul>
+          </div>
+          <div>
+            <div class="week-col-title">Build</div>
+            <ul class="week-task-list">
+              <li>Configure GitHub Actions with OIDC (no long-lived keys)</li>
+              <li>Add Trivy container scanning to pipeline</li>
+              <li>Add gitleaks secret detection</li>
+              <li>Enforce PR checks before merge</li>
+            </ul>
+          </div>
+        </div>
+        <div class="week-deliverable"><strong>GitHub deliverable:</strong> devsecops-pipeline — full CI/CD with security gates</div>
+      </div>
+    </div>
+
+    <div class="week-item" onclick="toggleWeek(this)">
+      <div class="week-header">
+        <span class="week-num">Week 7</span>
+        <span class="week-title">Policy as Code — OPA + Sentinel</span>
+        <span class="week-phase-badge badge-p2">Phase 2</span>
+        <span class="week-arrow">▶</span>
+      </div>
+      <div class="week-body">
+        <div class="week-body-grid">
+          <div>
+            <div class="week-col-title">Study</div>
+            <ul class="week-task-list">
+              <li>Open Policy Agent (OPA) concepts</li>
+              <li>Rego policy language basics</li>
+              <li>Conftest for Terraform + Kubernetes</li>
+              <li>HashiCorp Sentinel for Terraform Cloud</li>
+            </ul>
+          </div>
+          <div>
+            <div class="week-col-title">Build</div>
+            <ul class="week-task-list">
+              <li>Write OPA policy: deny public S3 buckets</li>
+              <li>Write OPA policy: require encryption on all resources</li>
+              <li>Integrate Conftest into GitHub Actions</li>
+              <li>Block non-compliant PRs automatically</li>
+            </ul>
+          </div>
+        </div>
+        <div class="week-deliverable"><strong>GitHub deliverable:</strong> policy-as-code-framework — OPA + Conftest policies library</div>
+      </div>
+    </div>
+
+    <div class="week-item" onclick="toggleWeek(this)">
+      <div class="week-header">
+        <span class="week-num">Week 8</span>
+        <span class="week-title">Cloud Incident Auto-Remediation</span>
+        <span class="week-phase-badge badge-p2">Phase 2</span>
+        <span class="week-arrow">▶</span>
+      </div>
+      <div class="week-body">
+        <div class="week-body-grid">
+          <div>
+            <div class="week-col-title">Study</div>
+            <ul class="week-task-list">
+              <li>GuardDuty finding types + severity</li>
+              <li>EventBridge rule patterns</li>
+              <li>Lambda isolation patterns</li>
+              <li>Step Functions for IR workflows</li>
+            </ul>
+          </div>
+          <div>
+            <div class="week-col-title">Build</div>
+            <ul class="week-task-list">
+              <li>GuardDuty → EventBridge → Lambda pipeline</li>
+              <li>Lambda: isolate EC2 (remove from SG)</li>
+              <li>Lambda: revoke IAM credentials automatically</li>
+              <li>SNS notification to security team</li>
+            </ul>
+          </div>
+        </div>
+        <div class="week-deliverable"><strong>GitHub deliverable:</strong> cloud-incident-auto-remediation — Phase 2 complete</div>
+      </div>
+    </div>
+
+    <!-- PHASE 3 -->
+    <div class="week-item" onclick="toggleWeek(this)">
+      <div class="week-header">
+        <span class="week-num">Week 9</span>
+        <span class="week-title">EKS Security Baseline</span>
+        <span class="week-phase-badge badge-p3">Phase 3</span>
+        <span class="week-arrow">▶</span>
+      </div>
+      <div class="week-body">
+        <div class="week-body-grid">
+          <div>
+            <div class="week-col-title">Study</div>
+            <ul class="week-task-list">
+              <li>Kubernetes RBAC deep dive</li>
+              <li>Pod Security Standards (restricted)</li>
+              <li>EKS IAM Roles for Service Accounts (IRSA)</li>
+              <li>Network policies with Calico</li>
+            </ul>
+          </div>
+          <div>
+            <div class="week-col-title">Build</div>
+            <ul class="week-task-list">
+              <li>Create EKS cluster (private endpoint)</li>
+              <li>Apply restricted pod security standards</li>
+              <li>Configure IRSA — no EC2 instance profiles</li>
+              <li>Add network policies: deny all ingress by default</li>
+            </ul>
+          </div>
+        </div>
+        <div class="week-deliverable"><strong>GitHub deliverable:</strong> kubernetes-security-baseline — hardened EKS cluster</div>
+      </div>
+    </div>
+
+    <div class="week-item" onclick="toggleWeek(this)">
+      <div class="week-header">
+        <span class="week-num">Week 10</span>
+        <span class="week-title">Falco + Runtime Threat Detection</span>
+        <span class="week-phase-badge badge-p3">Phase 3</span>
+        <span class="week-arrow">▶</span>
+      </div>
+      <div class="week-body">
+        <div class="week-body-grid">
+          <div>
+            <div class="week-col-title">Study</div>
+            <ul class="week-task-list">
+              <li>Falco architecture + eBPF driver</li>
+              <li>Falco rules language</li>
+              <li>Container escape detection</li>
+              <li>Runtime anomaly patterns</li>
+            </ul>
+          </div>
+          <div>
+            <div class="week-col-title">Build</div>
+            <ul class="week-task-list">
+              <li>Deploy Falco via Helm on EKS</li>
+              <li>Write custom rule: detect shell in container</li>
+              <li>Alert on privilege escalation attempts</li>
+              <li>Forward alerts to Security Hub</li>
+            </ul>
+          </div>
+        </div>
+        <div class="week-deliverable"><strong>GitHub deliverable:</strong> falco-runtime-security — custom rules + alert pipeline</div>
+      </div>
+    </div>
+
+    <div class="week-item" onclick="toggleWeek(this)">
+      <div class="week-header">
+        <span class="week-num">Week 11</span>
+        <span class="week-title">Kyverno Policy Enforcement</span>
+        <span class="week-phase-badge badge-p3">Phase 3</span>
+        <span class="week-arrow">▶</span>
+      </div>
+      <div class="week-body">
+        <div class="week-body-grid">
+          <div>
+            <div class="week-col-title">Study</div>
+            <ul class="week-task-list">
+              <li>Kyverno vs OPA Gatekeeper</li>
+              <li>Admission controllers in Kubernetes</li>
+              <li>ClusterPolicy vs Policy scope</li>
+              <li>Mutating vs Validating webhooks</li>
+            </ul>
+          </div>
+          <div>
+            <div class="week-col-title">Build</div>
+            <ul class="week-task-list">
+              <li>Deny containers running as root</li>
+              <li>Require image digest (no latest tag)</li>
+              <li>Auto-add security labels on namespaces</li>
+              <li>Block privileged containers in prod</li>
+            </ul>
+          </div>
+        </div>
+        <div class="week-deliverable"><strong>GitHub deliverable:</strong> kyverno-policies — library of security policies</div>
+      </div>
+    </div>
+
+    <div class="week-item" onclick="toggleWeek(this)">
+      <div class="week-header">
+        <span class="week-num">Week 12</span>
+        <span class="week-title">Container Image Security + Supply Chain</span>
+        <span class="week-phase-badge badge-p3">Phase 3</span>
+        <span class="week-arrow">▶</span>
+      </div>
+      <div class="week-body">
+        <div class="week-body-grid">
+          <div>
+            <div class="week-col-title">Study</div>
+            <ul class="week-task-list">
+              <li>Trivy deep dive — CVE scanning</li>
+              <li>Dockerfile best practices (rootless)</li>
+              <li>SBOM generation with Syft</li>
+              <li>Image signing with Cosign</li>
+            </ul>
+          </div>
+          <div>
+            <div class="week-col-title">Build</div>
+            <ul class="week-task-list">
+              <li>Scan images in CI — block on CRITICAL CVEs</li>
+              <li>Harden Dockerfile (non-root, read-only FS)</li>
+              <li>Generate SBOM and attach to image</li>
+              <li>Sign images with Cosign + verify in Kyverno</li>
+            </ul>
+          </div>
+        </div>
+        <div class="week-deliverable"><strong>GitHub deliverable:</strong> container-supply-chain-security — Phase 3 complete</div>
+      </div>
+    </div>
+
+    <!-- PHASE 4 -->
+    <div class="week-item" onclick="toggleWeek(this)">
+      <div class="week-header">
+        <span class="week-num">Week 13</span>
+        <span class="week-title">STRIDE Threat Modeling</span>
+        <span class="week-phase-badge badge-p4">Phase 4</span>
+        <span class="week-arrow">▶</span>
+      </div>
+      <div class="week-body">
+        <div class="week-body-grid">
+          <div>
+            <div class="week-col-title">Study</div>
+            <ul class="week-task-list">
+              <li>STRIDE methodology (all 6 categories)</li>
+              <li>Data Flow Diagrams (DFDs)</li>
+              <li>MITRE ATT&CK for Cloud (matrix)</li>
+              <li>Attack tree construction</li>
+            </ul>
+          </div>
+          <div>
+            <div class="week-col-title">Build</div>
+            <ul class="week-task-list">
+              <li>Threat model a 3-tier AWS application</li>
+              <li>Map STRIDE to MITRE ATT&CK techniques</li>
+              <li>Build attack path: public ALB → data exfil</li>
+              <li>Document mitigations per threat</li>
+            </ul>
+          </div>
+        </div>
+        <div class="week-deliverable"><strong>GitHub deliverable:</strong> threat-model-aws-architecture — full STRIDE analysis</div>
+      </div>
+    </div>
+
+    <div class="week-item" onclick="toggleWeek(this)">
+      <div class="week-header">
+        <span class="week-num">Week 14</span>
+        <span class="week-title">Cloud Threat Hunting + Log Analysis</span>
+        <span class="week-phase-badge badge-p4">Phase 4</span>
+        <span class="week-arrow">▶</span>
+      </div>
+      <div class="week-body">
+        <div class="week-body-grid">
+          <div>
+            <div class="week-col-title">Study</div>
+            <ul class="week-task-list">
+              <li>CloudTrail log structure (deep)</li>
+              <li>Athena for security analysis</li>
+              <li>Detection rules for IAM abuse</li>
+              <li>VPC Flow Log analysis patterns</li>
+            </ul>
+          </div>
+          <div>
+            <div class="week-col-title">Build</div>
+            <ul class="week-task-list">
+              <li>Write Athena queries: detect privilege escalation</li>
+              <li>Detect: AssumeRole chains</li>
+              <li>Detect: S3 data exfiltration via GetObject volume</li>
+              <li>Dashboard in CloudWatch for top threats</li>
+            </ul>
+          </div>
+        </div>
+        <div class="week-deliverable"><strong>GitHub deliverable:</strong> cloud-threat-hunting — Athena queries library + MITRE mapping</div>
+      </div>
+    </div>
+
+    <div class="week-item" onclick="toggleWeek(this)">
+      <div class="week-header">
+        <span class="week-num">Week 15</span>
+        <span class="week-title">AI Security Framework (LLM / RAG)</span>
+        <span class="week-phase-badge badge-p4">Phase 4</span>
+        <span class="week-arrow">▶</span>
+      </div>
+      <div class="week-body">
+        <div class="week-body-grid">
+          <div>
+            <div class="week-col-title">Study</div>
+            <ul class="week-task-list">
+              <li>OWASP Top 10 for LLM Applications</li>
+              <li>Prompt injection attack patterns</li>
+              <li>Bedrock Guardrails configuration</li>
+              <li>RAG security — data poisoning prevention</li>
+            </ul>
+          </div>
+          <div>
+            <div class="week-col-title">Build</div>
+            <ul class="week-task-list">
+              <li>Deploy Bedrock Guardrails with input/output filters</li>
+              <li>Test prompt injection against your guardrails</li>
+              <li>Implement IAM-scoped RAG access control</li>
+              <li>Document OWASP LLM Top 10 mitigations</li>
+            </ul>
+          </div>
+        </div>
+        <div class="week-deliverable"><strong>GitHub deliverable:</strong> ai-security-framework — rare, high-value project</div>
+      </div>
+    </div>
+
+    <div class="week-item" onclick="toggleWeek(this)">
+      <div class="week-header">
+        <span class="week-num">Week 16</span>
+        <span class="week-title">Portfolio Review + Interview Prep</span>
+        <span class="week-phase-badge badge-p4">Phase 4</span>
+        <span class="week-arrow">▶</span>
+      </div>
+      <div class="week-body">
+        <div class="week-body-grid">
+          <div>
+            <div class="week-col-title">Polish</div>
+            <ul class="week-task-list">
+              <li>All repos have architecture diagrams</li>
+              <li>All READMEs explain the "why", not just the "what"</li>
+              <li>Each project has a threat model section</li>
+              <li>GitHub profile README linking all projects</li>
+            </ul>
+          </div>
+          <div>
+            <div class="week-col-title">Prepare</div>
+            <ul class="week-task-list">
+              <li>Practice top 10 interview questions (below)</li>
+              <li>Write 3 STAR stories from your 10 years</li>
+              <li>Update LinkedIn with project highlights</li>
+              <li>Apply to 5 Cloud Security Architect roles</li>
+            </ul>
+          </div>
+        </div>
+        <div class="week-deliverable"><strong>Milestone:</strong> Portfolio complete. Ready to apply. 🎯</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider"/>
+
 <!-- PROJECTS -->
 <section class="section" id="projects">
   <div class="section-header">
@@ -756,111 +947,353 @@
   <div class="projects-grid">
 
     <div class="project-card">
-      <div class="project-header">
-        <span class="project-icon">🏗️</span>
-        <span class="project-level level-core">Core</span>
-      </div>
+      <div class="project-header"><span class="project-icon">🏗️</span><span class="project-level level-core">Core</span></div>
       <div class="project-name">AWS Zero Trust Landing Zone</div>
       <div class="project-desc">Enterprise-grade multi-account AWS architecture with IAM Identity Center, SCP policies, centralized logging, and network segmentation.</div>
-      <div class="project-tags">
-        <span class="tag">Terraform</span>
-        <span class="tag">AWS Organizations</span>
-        <span class="tag">IAM</span>
-        <span class="tag">SCP</span>
-        <span class="tag">CloudTrail</span>
-      </div>
+      <div class="project-arch">AWS Organizations<br/>├── security-account (logs, GuardDuty)<br/>├── dev-account<br/>└── prod-account (restricted SCPs)</div>
+      <div class="project-tags"><span class="tag">Terraform</span><span class="tag">AWS Organizations</span><span class="tag">IAM</span><span class="tag">SCP</span><span class="tag">CloudTrail</span></div>
     </div>
 
     <div class="project-card">
-      <div class="project-header">
-        <span class="project-icon">⚡</span>
-        <span class="project-level level-core">Core</span>
-      </div>
+      <div class="project-header"><span class="project-icon">⚡</span><span class="project-level level-core">Core</span></div>
       <div class="project-name">Cloud Incident Auto-Remediation</div>
       <div class="project-desc">GuardDuty → EventBridge → Lambda pipeline that automatically isolates compromised EC2 instances, revokes credentials, and notifies security team.</div>
-      <div class="project-tags">
-        <span class="tag">GuardDuty</span>
-        <span class="tag">Lambda</span>
-        <span class="tag">EventBridge</span>
-        <span class="tag">Python</span>
-        <span class="tag">SNS</span>
-      </div>
+      <div class="project-arch">GuardDuty finding<br/>→ EventBridge rule<br/>→ Lambda isolate EC2<br/>→ Lambda revoke IAM<br/>→ SNS notify team</div>
+      <div class="project-tags"><span class="tag">GuardDuty</span><span class="tag">Lambda</span><span class="tag">EventBridge</span><span class="tag">Python</span><span class="tag">SNS</span></div>
     </div>
 
     <div class="project-card">
-      <div class="project-header">
-        <span class="project-icon">🔒</span>
-        <span class="project-level level-core">Core</span>
-      </div>
+      <div class="project-header"><span class="project-icon">🔒</span><span class="project-level level-core">Core</span></div>
       <div class="project-name">Secure Terraform Pipeline</div>
       <div class="project-desc">DevSecOps pipeline with IaC security scanning, OIDC authentication, drift detection, and automated compliance enforcement on every PR.</div>
-      <div class="project-tags">
-        <span class="tag">GitHub Actions</span>
-        <span class="tag">Checkov</span>
-        <span class="tag">tfsec</span>
-        <span class="tag">OIDC</span>
-        <span class="tag">Sentinel</span>
-      </div>
+      <div class="project-arch">PR opened<br/>→ Checkov + tfsec scan<br/>→ OPA policy check<br/>→ Trivy scan<br/>→ Deploy if all pass</div>
+      <div class="project-tags"><span class="tag">GitHub Actions</span><span class="tag">Checkov</span><span class="tag">tfsec</span><span class="tag">OIDC</span><span class="tag">OPA</span></div>
     </div>
 
     <div class="project-card">
-      <div class="project-header">
-        <span class="project-icon">🕵️</span>
-        <span class="project-level level-mid">Mid</span>
-      </div>
+      <div class="project-header"><span class="project-icon">🕵️</span><span class="project-level level-mid">Mid</span></div>
       <div class="project-name">Cloud Threat Hunting Platform</div>
       <div class="project-desc">Centralized threat detection using CloudTrail + Athena queries mapped to MITRE ATT&CK. Detect privilege escalation, lateral movement, and data exfiltration.</div>
-      <div class="project-tags">
-        <span class="tag">Athena</span>
-        <span class="tag">MITRE ATT&CK</span>
-        <span class="tag">CloudTrail</span>
-        <span class="tag">Security Hub</span>
-      </div>
+      <div class="project-arch">CloudTrail → S3<br/>→ Athena queries<br/>→ MITRE mapping<br/>→ CloudWatch alerts</div>
+      <div class="project-tags"><span class="tag">Athena</span><span class="tag">MITRE ATT&CK</span><span class="tag">CloudTrail</span><span class="tag">Security Hub</span></div>
     </div>
 
     <div class="project-card">
-      <div class="project-header">
-        <span class="project-icon">🐳</span>
-        <span class="project-level level-mid">Mid</span>
-      </div>
+      <div class="project-header"><span class="project-icon">🐳</span><span class="project-level level-mid">Mid</span></div>
       <div class="project-name">Kubernetes Runtime Security</div>
       <div class="project-desc">EKS cluster hardened with Falco runtime detection, Kyverno policy enforcement, network policies, and pod security standards. Alerts on anomalous behavior.</div>
-      <div class="project-tags">
-        <span class="tag">EKS</span>
-        <span class="tag">Falco</span>
-        <span class="tag">Kyverno</span>
-        <span class="tag">OPA</span>
-        <span class="tag">Trivy</span>
-      </div>
+      <div class="project-arch">EKS (private endpoint)<br/>→ Falco (eBPF)<br/>→ Kyverno policies<br/>→ Network policies<br/>→ IRSA (no EC2 profiles)</div>
+      <div class="project-tags"><span class="tag">EKS</span><span class="tag">Falco</span><span class="tag">Kyverno</span><span class="tag">OPA</span><span class="tag">Trivy</span></div>
     </div>
 
     <div class="project-card">
-      <div class="project-header">
-        <span class="project-icon">🎯</span>
-        <span class="project-level level-senior">Senior</span>
-      </div>
+      <div class="project-header"><span class="project-icon">🎯</span><span class="project-level level-senior">Senior</span></div>
       <div class="project-name">Threat Model: AWS Architecture</div>
       <div class="project-desc">STRIDE-based threat model for a real-world multi-tier AWS application. Attack paths, risk scoring, mitigation architecture, and detection strategy.</div>
-      <div class="project-tags">
-        <span class="tag">STRIDE</span>
-        <span class="tag">Attack Paths</span>
-        <span class="tag">Risk Matrix</span>
-        <span class="tag">Architecture Diagrams</span>
-      </div>
+      <div class="project-arch">Architecture diagram<br/>→ STRIDE analysis<br/>→ Attack paths (MITRE)<br/>→ Risk matrix<br/>→ Mitigation design</div>
+      <div class="project-tags"><span class="tag">STRIDE</span><span class="tag">MITRE ATT&CK</span><span class="tag">Attack Paths</span><span class="tag">Risk Matrix</span></div>
     </div>
 
     <div class="project-card">
-      <div class="project-header">
-        <span class="project-icon">🤖</span>
-        <span class="project-level level-senior">Senior</span>
-      </div>
+      <div class="project-header"><span class="project-icon">🤖</span><span class="project-level level-senior">Senior</span></div>
       <div class="project-name">AI Security Framework</div>
       <div class="project-desc">Security controls for LLM workloads: prompt injection defense, Bedrock Guardrails, RAG access control, input/output moderation. OWASP Top 10 LLM coverage.</div>
-      <div class="project-tags">
-        <span class="tag">Bedrock</span>
-        <span class="tag">OWASP LLM</span>
-        <span class="tag">Guardrails</span>
-        <span class="tag">RAG Security</span>
+      <div class="project-arch">LLM API request<br/>→ Input filter (guardrails)<br/>→ IAM-scoped RAG<br/>→ Output moderation<br/>→ Audit logging</div>
+      <div class="project-tags"><span class="tag">Bedrock</span><span class="tag">OWASP LLM</span><span class="tag">Guardrails</span><span class="tag">RAG Security</span></div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- ATTACK LABS -->
+<section class="section" id="labs">
+  <div class="section-header">
+    <span class="section-tag">Attack Labs</span>
+    <h2 class="section-title">Simulate Real Attacks — Learn to Defend</h2>
+  </div>
+
+  <div class="labs-grid">
+
+    <div class="lab-card">
+      <div class="lab-header"><span class="lab-name">Pacu</span><span class="lab-type">AWS Exploitation</span></div>
+      <div class="lab-desc">AWS exploitation framework. Use it to simulate real attacks against your own lab environment — privilege escalation, credential theft, lateral movement.</div>
+      <ul class="lab-scenarios">
+        <li>IAM privilege escalation via policy misconfig</li>
+        <li>S3 bucket enumeration + data access</li>
+        <li>EC2 metadata service abuse (SSRF)</li>
+        <li>Lambda role abuse for lateral movement</li>
+      </ul>
+    </div>
+
+    <div class="lab-card">
+      <div class="lab-header"><span class="lab-name">CloudGoat</span><span class="lab-type">Vulnerable by Design</span></div>
+      <div class="lab-desc">Rhino Security Labs' intentionally vulnerable AWS environment. 15+ scenarios from easy to hard. Perfect for structured learning of cloud attack paths.</div>
+      <ul class="lab-scenarios">
+        <li>vulnerable_cognito — auth bypass</li>
+        <li>iam_privesc_by_attachment — IAM escalation</li>
+        <li>cloud_breach_s3 — data exfiltration</li>
+        <li>codebuild_secrets — CI/CD secrets leak</li>
+      </ul>
+    </div>
+
+    <div class="lab-card">
+      <div class="lab-header"><span class="lab-name">Stratus Red Team</span><span class="lab-type">MITRE ATT&CK</span></div>
+      <div class="lab-desc">Granular, detonate-able attack techniques for the cloud. Each technique maps directly to MITRE ATT&CK. Generate realistic CloudTrail logs for detection testing.</div>
+      <ul class="lab-scenarios">
+        <li>Exfiltrate S3 data via object copies</li>
+        <li>Backdoor IAM roles for persistence</li>
+        <li>Disable CloudTrail logging</li>
+        <li>Steal EC2 instance credentials (SSRF)</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- CERTIFICATIONS -->
+<section class="section" id="certs">
+  <div class="section-header">
+    <span class="section-tag">Certifications</span>
+    <h2 class="section-title">Certs That Actually Matter</h2>
+  </div>
+
+  <div class="certs-grid">
+
+    <div class="cert-card">
+      <div class="cert-header"><span class="cert-name">AWS Security Specialty</span><span class="cert-priority priority-must">Must Have</span></div>
+      <div class="cert-body">The most recognized cloud security cert. Covers IAM, detective controls, infrastructure security, data protection, and incident response. Required by most job postings.</div>
+      <div class="cert-timeline">When: <strong>After Phase 2 (Week 8)</strong></div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-header"><span class="cert-name">CKS — Certified Kubernetes Security</span><span class="cert-priority priority-must">Must Have</span></div>
+      <div class="cert-body">Validates container security expertise. Very rare in the market. Required by TikTok and many big tech security teams. Hands-on exam — no multiple choice.</div>
+      <div class="cert-timeline">When: <strong>After Phase 3 (Week 12)</strong></div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-header"><span class="cert-name">CISSP</span><span class="cert-priority priority-high">High Value</span></div>
+      <div class="cert-body">Broad security architecture cert. Validates risk management and security design thinking. Strong signal for Architect roles. Requires 5+ years experience.</div>
+      <div class="cert-timeline">When: <strong>After portfolio complete</strong></div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-header"><span class="cert-name">AWS Solutions Architect Pro</span><span class="cert-priority priority-high">High Value</span></div>
+      <div class="cert-body">Proves you understand cloud architecture at scale. Combined with Security Specialty, sends a strong signal that you think like an architect, not just a security engineer.</div>
+      <div class="cert-timeline">When: <strong>Parallel to Phase 1</strong></div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-header"><span class="cert-name">Terraform Associate</span><span class="cert-priority priority-high">High Value</span></div>
+      <div class="cert-body">Quick win (2–4 weeks). Validates IaC skills which every modern security role expects. Good to have before Phase 2 interviews.</div>
+      <div class="cert-timeline">When: <strong>Week 5–6</strong></div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-header"><span class="cert-name">OSCP / OffSec</span><span class="cert-priority priority-bonus">Bonus</span></div>
+      <div class="cert-body">Offensive security cert. Rare in cloud security but differentiates you significantly. Shows you understand how attackers think — key for Architect roles.</div>
+      <div class="cert-timeline">When: <strong>After portfolio complete</strong></div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- BIG TECH REQUIREMENTS -->
+<section class="section" id="bigtech">
+  <div class="section-header">
+    <span class="section-tag">Big Tech</span>
+    <h2 class="section-title">What They Actually Require</h2>
+  </div>
+
+  <div class="bigtech-grid">
+
+    <div class="bigtech-card">
+      <div class="bigtech-logo">TikTok / ByteDance</div>
+      <div class="bigtech-role">Cloud Security Engineer / Infrastructure Security</div>
+      <div class="bigtech-salary">$150k–$320k USD</div>
+      <ul class="bigtech-reqs">
+        <li>AWS + GCP multi-cloud experience</li>
+        <li>Kubernetes security (EKS/GKE) — critical</li>
+        <li>Terraform + Ansible IaC</li>
+        <li>Python or Go for automation</li>
+        <li>Linux hardening (seccomp, AppArmor)</li>
+        <li>Falco / OPA / Istio</li>
+        <li>Experience at scale (billions of requests)</li>
+      </ul>
+    </div>
+
+    <div class="bigtech-card">
+      <div class="bigtech-logo">AWS / Amazon</div>
+      <div class="bigtech-role">Security Engineer / Principal Security</div>
+      <div class="bigtech-salary">$180k–$350k USD</div>
+      <ul class="bigtech-reqs">
+        <li>Deep IAM + identity architecture</li>
+        <li>Threat modeling (STRIDE/MITRE)</li>
+        <li>Security design reviews</li>
+        <li>Incident response at cloud scale</li>
+        <li>Strong coding (Python/Java/Go)</li>
+        <li>Security Specialty cert preferred</li>
+        <li>Bar raiser culture — communication critical</li>
+      </ul>
+    </div>
+
+    <div class="bigtech-card">
+      <div class="bigtech-logo">Stripe</div>
+      <div class="bigtech-role">Infrastructure Security / Detection Engineer</div>
+      <div class="bigtech-salary">$200k–$350k USD</div>
+      <ul class="bigtech-reqs">
+        <li>Detection engineering (SIEM, custom rules)</li>
+        <li>Multi-cloud + on-prem hybrid</li>
+        <li>Strong Go / Python coding</li>
+        <li>Compliance (PCI-DSS, SOC2)</li>
+        <li>Zero trust architecture</li>
+        <li>Incident response leadership</li>
+        <li>Security automation mindset</li>
+      </ul>
+    </div>
+
+    <div class="bigtech-card">
+      <div class="bigtech-logo">Cloudflare</div>
+      <div class="bigtech-role">Security Engineer / Cloud Security Architect</div>
+      <div class="bigtech-salary">€130k–€200k Europe</div>
+      <ul class="bigtech-reqs">
+        <li>Network security fundamentals (strong)</li>
+        <li>Zero Trust / SASE architecture</li>
+        <li>Kubernetes + container security</li>
+        <li>Rust / Go coding preferred</li>
+        <li>Edge security concepts</li>
+        <li>DDoS + WAF architecture</li>
+        <li>Strong documentation skills</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- INTERVIEW QUESTIONS -->
+<section class="section" id="interview">
+  <div class="section-header">
+    <span class="section-tag">Interview Prep</span>
+    <h2 class="section-title">Top 10 Questions — Cloud Security Architect</h2>
+  </div>
+
+  <div class="interview-list">
+
+    <div class="interview-item" onclick="toggleInterview(this)">
+      <div class="interview-q">
+        <span class="interview-num">Q1</span>
+        <span class="interview-text">How would you design a secure multi-account AWS architecture from scratch?</span>
+        <span class="interview-arrow">▶</span>
+      </div>
+      <div class="interview-answer">
+        Start with <strong>AWS Organizations</strong> — management account only for billing/governance, never workloads. Create dedicated accounts: security (centralized logs, GuardDuty, Security Hub), shared-services, dev, staging, prod. Apply <strong>SCPs at OU level</strong> to prevent root access, block non-approved regions, and enforce encryption. Use <strong>IAM Identity Center (SSO)</strong> for all human access — no long-lived IAM users. Centralize CloudTrail logs to security account S3 with bucket policy denying delete. Show you think in terms of blast radius reduction and least privilege by design.
+      </div>
+    </div>
+
+    <div class="interview-item" onclick="toggleInterview(this)">
+      <div class="interview-q">
+        <span class="interview-num">Q2</span>
+        <span class="interview-text">Explain how you would respond to a compromised EC2 instance in production.</span>
+        <span class="interview-arrow">▶</span>
+      </div>
+      <div class="interview-answer">
+        <strong>Contain first:</strong> remove instance from all security groups (isolate SG with no ingress/egress). <strong>Preserve evidence:</strong> take EBS snapshot, capture memory if possible, export VPC flow logs for the time window. <strong>Revoke credentials:</strong> if the instance had an IAM role, revoke all active sessions via a deny-all inline policy. <strong>Investigate:</strong> CloudTrail for API calls from that role, GuardDuty findings, application logs. <strong>Remediate:</strong> terminate instance, deploy fresh from golden AMI. <strong>Post-incident:</strong> update runbook, automate isolation via Lambda for future events.
+      </div>
+    </div>
+
+    <div class="interview-item" onclick="toggleInterview(this)">
+      <div class="interview-q">
+        <span class="interview-num">Q3</span>
+        <span class="interview-text">What is the difference between a Security Engineer and a Security Architect?</span>
+        <span class="interview-arrow">▶</span>
+      </div>
+      <div class="interview-answer">
+        A Security <strong>Engineer</strong> implements and operates security controls — configures GuardDuty, writes Lambda functions, responds to incidents. A Security <strong>Architect</strong> designs the security posture — evaluates risk, defines control requirements, creates reference architectures, and ensures that systems are <strong>secure by design</strong> before they're built. Architects think in threat models and attack paths, not just tool configurations. The key phrase: engineers say "I configured X", architects say "I mitigated Y risk by designing Z control".
+      </div>
+    </div>
+
+    <div class="interview-item" onclick="toggleInterview(this)">
+      <div class="interview-q">
+        <span class="interview-num">Q4</span>
+        <span class="interview-text">How do you implement Zero Trust in AWS?</span>
+        <span class="interview-arrow">▶</span>
+      </div>
+      <div class="interview-answer">
+        Zero Trust means <strong>never trust, always verify</strong> — identity, device, and context matter for every access decision. In AWS: (1) <strong>Identity</strong> — all access via IAM Identity Center with MFA, no long-lived keys; (2) <strong>Network</strong> — private subnets, VPC endpoints instead of internet routing, PrivateLink for AWS services; (3) <strong>Workloads</strong> — IRSA for pods (no EC2 instance profiles), short-lived credentials everywhere; (4) <strong>Data</strong> — encrypt at rest + in transit, KMS with key policies tied to identity; (5) <strong>Monitoring</strong> — CloudTrail + GuardDuty on every action, anomaly detection. The principle: even if an attacker is inside, they can't move laterally.
+      </div>
+    </div>
+
+    <div class="interview-item" onclick="toggleInterview(this)">
+      <div class="interview-q">
+        <span class="interview-num">Q5</span>
+        <span class="interview-text">Walk me through a STRIDE threat model for a typical 3-tier web application on AWS.</span>
+        <span class="interview-arrow">▶</span>
+      </div>
+      <div class="interview-answer">
+        For a web app (ALB → EC2 → RDS): <strong>S</strong>poofing — attacker impersonates user (mitigation: Cognito + MFA); <strong>T</strong>ampering — modify data in transit or at rest (mitigation: TLS 1.2+, KMS encryption, integrity checks); <strong>R</strong>epudiation — deny performing an action (mitigation: CloudTrail, application-level audit logs); <strong>I</strong>nformation Disclosure — S3 public exposure, RDS without encryption (mitigation: bucket policies, encryption, VPC isolation); <strong>D</strong>enial of Service — flood ALB (mitigation: WAF rate limiting, Shield Advanced); <strong>E</strong>levation of Privilege — EC2 role with admin permissions (mitigation: least privilege IAM, SCPs). Each threat maps to MITRE ATT&CK techniques.
+      </div>
+    </div>
+
+    <div class="interview-item" onclick="toggleInterview(this)">
+      <div class="interview-q">
+        <span class="interview-num">Q6</span>
+        <span class="interview-text">How do you secure a Kubernetes cluster in production?</span>
+        <span class="interview-arrow">▶</span>
+      </div>
+      <div class="interview-answer">
+        Layers: <strong>API server</strong> — private endpoint, RBAC least privilege, audit logging; <strong>Authentication</strong> — IRSA for pods (no EC2 profiles), short-lived OIDC tokens; <strong>Admission control</strong> — Kyverno to enforce: no root containers, no privileged mode, image digest required, no latest tag; <strong>Runtime</strong> — Falco for behavioral detection, seccomp profiles, AppArmor; <strong>Network</strong> — network policies deny-all by default, only allow explicit flows; <strong>Images</strong> — Trivy scanning in CI, sign with Cosign, verify in Kyverno; <strong>Secrets</strong> — External Secrets Operator → AWS Secrets Manager (no secrets in YAML); <strong>Node</strong> — CIS benchmark hardening, restricted instance metadata.
+      </div>
+    </div>
+
+    <div class="interview-item" onclick="toggleInterview(this)">
+      <div class="interview-q">
+        <span class="interview-num">Q7</span>
+        <span class="interview-text">What are the most common IAM misconfigurations you see in AWS environments?</span>
+        <span class="interview-arrow">▶</span>
+      </div>
+      <div class="interview-answer">
+        (1) <strong>Wildcard permissions</strong> — Action: "*" or Resource: "*" in IAM policies; (2) <strong>Long-lived access keys</strong> — human users with static keys instead of role assumption; (3) <strong>Overly permissive cross-account trust</strong> — trust policy without conditions (no ExternalId, no MFA condition); (4) <strong>EC2 instance profiles with admin roles</strong> — any exploit on that instance = full AWS access; (5) <strong>No SCP guardrails</strong> — member accounts can do anything including disabling CloudTrail; (6) <strong>PassRole abuse</strong> — allowing iam:PassRole without restricting which roles, enabling privilege escalation. Tool to find these: Cloudsplaining, IAM Access Analyzer.
+      </div>
+    </div>
+
+    <div class="interview-item" onclick="toggleInterview(this)">
+      <div class="interview-q">
+        <span class="interview-num">Q8</span>
+        <span class="interview-text">How do you build a DevSecOps pipeline that doesn't slow down developers?</span>
+        <span class="interview-arrow">▶</span>
+      </div>
+      <div class="interview-answer">
+        Key principle: <strong>shift left without friction</strong>. (1) Fast tools first — linters and SAST run in seconds, don't block for slow scans; (2) <strong>OIDC instead of static credentials</strong> — no keys to manage; (3) <strong>Pre-commit hooks</strong> (gitleaks, detect-secrets) — catch secrets locally before they reach CI; (4) <strong>Policy as Code in CI</strong> — Checkov/OPA give clear, actionable error messages not vague failures; (5) <strong>Scan only changed files</strong> in PRs, full scan only on merge to main; (6) <strong>Developer education</strong> — show the exact line and how to fix it; (7) <strong>Don't block on LOW/MEDIUM</strong> in PRs — only block on CRITICAL/HIGH. Security is a feature, not a gate.
+      </div>
+    </div>
+
+    <div class="interview-item" onclick="toggleInterview(this)">
+      <div class="interview-q">
+        <span class="interview-num">Q9</span>
+        <span class="interview-text">How would you detect a cryptominer running inside a compromised container?</span>
+        <span class="interview-arrow">▶</span>
+      </div>
+      <div class="interview-answer">
+        Multiple signals: (1) <strong>Falco rule</strong> — detect unexpected outbound connections on port 3333/4444, or spawning of processes like xmrig, minerd; (2) <strong>CloudWatch metrics</strong> — unusual CPU spike on EC2 node or EKS pod (cryptominer uses ~100% CPU); (3) <strong>GuardDuty</strong> — CryptoCurrency:EC2/BitcoinTool finding if connecting to known mining pool IPs; (4) <strong>VPC Flow Logs</strong> — high volume outbound to unknown external IPs; (5) <strong>Audit logs</strong> — if container was deployed from an unverified image (Kyverno would have blocked this). Prevention: image signing + Kyverno verification means only trusted images run.
+      </div>
+    </div>
+
+    <div class="interview-item" onclick="toggleInterview(this)">
+      <div class="interview-q">
+        <span class="interview-num">Q10</span>
+        <span class="interview-text">What is your approach to securing AI/LLM workloads on AWS?</span>
+        <span class="interview-arrow">▶</span>
+      </div>
+      <div class="interview-answer">
+        OWASP Top 10 LLM as the framework: (1) <strong>Prompt injection</strong> — Bedrock Guardrails with input filtering, separate system/user context in prompts; (2) <strong>Data exposure</strong> — RAG access control via IAM-scoped vector DB queries (user can only retrieve what they're authorized to see); (3) <strong>Insecure output</strong> — output moderation layer, never execute model output directly; (4) <strong>Model access control</strong> — IAM policies on Bedrock, VPC endpoint for private access, CloudTrail logging all model invocations; (5) <strong>Data poisoning prevention</strong> — validate RAG data sources, hash verification; (6) <strong>Monitoring</strong> — log all prompts + responses for anomaly detection. This skill is extremely rare — very few security architects have it.
       </div>
     </div>
 
@@ -937,6 +1370,26 @@
         <li>Step Functions</li>
       </ul>
     </div>
+    <div class="stack-card">
+      <div class="stack-category">AI Security</div>
+      <ul class="stack-items">
+        <li>Amazon Bedrock</li>
+        <li>Bedrock Guardrails</li>
+        <li>OWASP Top 10 LLM</li>
+        <li>RAG access control</li>
+        <li>Prompt injection defense</li>
+      </ul>
+    </div>
+    <div class="stack-card">
+      <div class="stack-category">Secret Detection</div>
+      <ul class="stack-items">
+        <li>gitleaks</li>
+        <li>trufflehog</li>
+        <li>GitGuardian</li>
+        <li>detect-secrets (pre-commit)</li>
+        <li>AWS Macie</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -975,72 +1428,202 @@
 
 <hr class="divider"/>
 
+<!-- STRATEGIC CANVAS -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-tag">Master Canvas</span>
+    <h2 class="section-title">Cloud Security Strategic Canvas</h2>
+  </div>
+
+  <div class="canvas-grid">
+    <div class="canvas-card">
+      <div class="canvas-num">Problem 1</div>
+      <div class="canvas-title">IAM & Identity</div>
+      <div class="canvas-sub">Real issues</div>
+      <ul class="canvas-items">
+        <li>Excessive permissions / privilege escalation</li>
+        <li>Exposed long-lived access keys</li>
+        <li>Weak cross-account trust policies</li>
+      </ul>
+      <div class="canvas-sub">Your project</div>
+      <ul class="canvas-items"><li>IAM Privilege Escalation Analyzer</li></ul>
+    </div>
+    <div class="canvas-card">
+      <div class="canvas-num">Problem 2</div>
+      <div class="canvas-title">Data Exposure</div>
+      <div class="canvas-sub">Real issues</div>
+      <ul class="canvas-items">
+        <li>Public S3 buckets</li>
+        <li>Unencrypted databases</li>
+        <li>Exposed EBS snapshots</li>
+      </ul>
+      <div class="canvas-sub">Your project</div>
+      <ul class="canvas-items"><li>Cloud Storage Exposure Scanner</li></ul>
+    </div>
+    <div class="canvas-card">
+      <div class="canvas-num">Problem 3</div>
+      <div class="canvas-title">Visibility Gap</div>
+      <div class="canvas-sub">Real issues</div>
+      <ul class="canvas-items">
+        <li>Logs exist but no one analyzes them</li>
+        <li>No threat hunting capability</li>
+        <li>Alerts without context</li>
+      </ul>
+      <div class="canvas-sub">Your project</div>
+      <ul class="canvas-items"><li>Cloud Threat Hunting Platform</li></ul>
+    </div>
+    <div class="canvas-card">
+      <div class="canvas-num">Problem 4</div>
+      <div class="canvas-title">Insecure IaC</div>
+      <div class="canvas-sub">Real issues</div>
+      <ul class="canvas-items">
+        <li>Infrastructure deployed without security review</li>
+        <li>Hardcoded secrets in Terraform</li>
+        <li>No compliance enforcement</li>
+      </ul>
+      <div class="canvas-sub">Your project</div>
+      <ul class="canvas-items"><li>Secure Terraform Pipeline</li></ul>
+    </div>
+    <div class="canvas-card">
+      <div class="canvas-num">Problem 5</div>
+      <div class="canvas-title">Runtime Threats</div>
+      <div class="canvas-sub">Real issues</div>
+      <ul class="canvas-items">
+        <li>Containers running as root</li>
+        <li>Cryptominers in pods</li>
+        <li>Container escape attempts</li>
+      </ul>
+      <div class="canvas-sub">Your project</div>
+      <ul class="canvas-items"><li>Kubernetes Runtime Security</li></ul>
+    </div>
+    <div class="canvas-card">
+      <div class="canvas-num">Problem 6</div>
+      <div class="canvas-title">Slow IR</div>
+      <div class="canvas-sub">Real issues</div>
+      <ul class="canvas-items">
+        <li>Alert fired, no one responds fast enough</li>
+        <li>Manual containment takes hours</li>
+        <li>No playbook for cloud incidents</li>
+      </ul>
+      <div class="canvas-sub">Your project</div>
+      <ul class="canvas-items"><li>Cloud Incident Auto-Remediation</li></ul>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- RISKS AND OPPORTUNITIES -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-tag">Strategy</span>
+    <h2 class="section-title">Risks to Avoid / Opportunities to Capture</h2>
+  </div>
+
+  <div class="risk-opp-grid">
+    <div class="risk-card">
+      <div class="ro-title">5 Risks in Your Plan</div>
+      <ul class="ro-list">
+        <li>Focus only on tools — forgetting to show risk thinking</li>
+        <li>No architecture diagrams in GitHub repos</li>
+        <li>Portfolio without threat modeling docs</li>
+        <li>Ignoring Kubernetes (required at Big Tech)</li>
+        <li>No Policy-as-Code or runtime security coverage</li>
+      </ul>
+    </div>
+    <div class="opp-card">
+      <div class="ro-title">5 Opportunities Right Now</div>
+      <ul class="ro-list">
+        <li>GitHub portfolio with real architecture — very rare</li>
+        <li>DevSecOps + Security hybrid (most engineers do only one)</li>
+        <li>AI Security specialty — almost nobody has this yet</li>
+        <li>Incident response automation — high pain for all companies</li>
+        <li>10 years IT + cloud security = credibility and depth</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- ROUTINE -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-tag">Routine</span>
+    <h2 class="section-title">Weekly Schedule — 2h Per Day</h2>
+  </div>
+
+  <div class="routine-grid">
+    <div class="routine-day">
+      <div class="routine-day-name">Monday</div>
+      <div class="routine-focus">Theory</div>
+      <div class="routine-detail">Read docs, watch 1 focused video, take notes</div>
+    </div>
+    <div class="routine-day">
+      <div class="routine-day-name">Tuesday</div>
+      <div class="routine-focus">AWS Lab</div>
+      <div class="routine-detail">Build the week's main AWS component</div>
+    </div>
+    <div class="routine-day">
+      <div class="routine-day-name">Wednesday</div>
+      <div class="routine-focus">Attack</div>
+      <div class="routine-detail">Run Pacu / CloudGoat / Stratus on your lab</div>
+    </div>
+    <div class="routine-day">
+      <div class="routine-day-name">Thursday</div>
+      <div class="routine-focus">Terraform</div>
+      <div class="routine-detail">Automate what you built with IaC</div>
+    </div>
+    <div class="routine-day">
+      <div class="routine-day-name">Friday</div>
+      <div class="routine-focus">GitHub</div>
+      <div class="routine-detail">Document, README, commit, push</div>
+    </div>
+    <div class="routine-day">
+      <div class="routine-day-name">Saturday</div>
+      <div class="routine-focus">Architecture</div>
+      <div class="routine-detail">Draw diagrams, threat model, mock interview</div>
+    </div>
+    <div class="routine-day rest">
+      <div class="routine-day-name">Sunday</div>
+      <div class="routine-focus">Rest</div>
+      <div class="routine-detail">Recharge. This is a marathon, not a sprint.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
 <!-- CHECKLIST -->
 <section class="section">
   <div class="section-header">
-    <span class="section-tag">Weekly Focus</span>
+    <span class="section-tag">Daily Focus</span>
     <h2 class="section-title">When It Gets Heavy — Do This</h2>
   </div>
 
   <div class="checklist-grid">
     <div class="checklist-card">
       <div class="checklist-title">Daily Minimum (2h)</div>
-      <div class="checklist-item" onclick="toggle(this)">
-        <div class="check-box">✓</div>
-        <span class="check-text">1 AWS lab or Terraform config</span>
-      </div>
-      <div class="checklist-item" onclick="toggle(this)">
-        <div class="check-box">✓</div>
-        <span class="check-text">Document what you built (README)</span>
-      </div>
-      <div class="checklist-item" onclick="toggle(this)">
-        <div class="check-box">✓</div>
-        <span class="check-text">Commit to GitHub</span>
-      </div>
-      <div class="checklist-item" onclick="toggle(this)">
-        <div class="check-box">✓</div>
-        <span class="check-text">Read 1 security advisory or blog</span>
-      </div>
+      <div class="checklist-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">1 AWS lab or Terraform config</span></div>
+      <div class="checklist-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Document what you built (README)</span></div>
+      <div class="checklist-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Commit to GitHub</span></div>
+      <div class="checklist-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Read 1 security advisory or blog</span></div>
     </div>
 
     <div class="checklist-card">
       <div class="checklist-title">Weekly Minimum</div>
-      <div class="checklist-item" onclick="toggle(this)">
-        <div class="check-box">✓</div>
-        <span class="check-text">One project milestone pushed to GitHub</span>
-      </div>
-      <div class="checklist-item" onclick="toggle(this)">
-        <div class="check-box">✓</div>
-        <span class="check-text">Architecture diagram updated</span>
-      </div>
-      <div class="checklist-item" onclick="toggle(this)">
-        <div class="check-box">✓</div>
-        <span class="check-text">Simulate one attack (Pacu / CloudGoat)</span>
-      </div>
-      <div class="checklist-item" onclick="toggle(this)">
-        <div class="check-box">✓</div>
-        <span class="check-text">Review progress against roadmap</span>
-      </div>
+      <div class="checklist-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">One project milestone pushed to GitHub</span></div>
+      <div class="checklist-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Architecture diagram updated</span></div>
+      <div class="checklist-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Simulate one attack (Pacu / CloudGoat)</span></div>
+      <div class="checklist-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Review progress against roadmap</span></div>
     </div>
 
     <div class="checklist-card">
       <div class="checklist-title">If You Feel Like Quitting</div>
-      <div class="checklist-item" onclick="toggle(this)">
-        <div class="check-box">✓</div>
-        <span class="check-text">Do only 30 minutes — not zero</span>
-      </div>
-      <div class="checklist-item" onclick="toggle(this)">
-        <div class="check-box">✓</div>
-        <span class="check-text">Look at the salary table above</span>
-      </div>
-      <div class="checklist-item" onclick="toggle(this)">
-        <div class="check-box">✓</div>
-        <span class="check-text">Push one small commit — anything</span>
-      </div>
-      <div class="checklist-item" onclick="toggle(this)">
-        <div class="check-box">✓</div>
-        <span class="check-text">Remember: 10 years got you here. 16 weeks finishes it.</span>
-      </div>
+      <div class="checklist-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Do only 30 minutes — not zero</span></div>
+      <div class="checklist-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Look at the salary table above</span></div>
+      <div class="checklist-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Push one small commit — anything</span></div>
+      <div class="checklist-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Remember: 10 years got you here. 16 weeks finishes it.</span></div>
     </div>
   </div>
 </section>
@@ -1051,19 +1634,49 @@
 </footer>
 
 <script>
-  function toggle(el) {
-    el.classList.toggle('done');
+  // ── Toggle functions ──
+  function toggleWeek(el) { el.classList.toggle('open'); }
+  function toggleInterview(el) { el.classList.toggle('open'); }
+  function toggleCheck(el) { el.classList.toggle('done'); }
+
+  // ── Phase progress ──
+  const STORAGE_KEY = 'maikmax_phase_progress';
+
+  function loadProgress() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [0,0,0,0]; }
+    catch(e) { return [0,0,0,0]; }
   }
 
-  // Animate progress bars on load
+  function saveProgress(arr) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
+  }
+
+  function updateUI(arr) {
+    arr.forEach((pct, i) => {
+      document.getElementById('fill' + i).style.width = pct + '%';
+      const card = document.getElementById('phaseCard' + i);
+      if (pct === 100) { card.classList.add('done'); card.classList.remove('active'); }
+      else if (pct > 0) { card.classList.add('active'); card.classList.remove('done'); }
+    });
+    const total = Math.round(arr.reduce((a,b) => a+b, 0) / arr.length);
+    document.getElementById('progressPct').textContent = total + '%';
+  }
+
+  function setPhase(idx) {
+    const arr = loadProgress();
+    arr[idx] = arr[idx] === 100 ? 0 : 100;
+    saveProgress(arr);
+    updateUI(arr);
+  }
+
+  function resetProgress() {
+    saveProgress([0,0,0,0]);
+    updateUI([0,0,0,0]);
+  }
+
+  // ── Init ──
   window.addEventListener('load', () => {
-    const fills = document.querySelectorAll('.phase-fill');
-    setTimeout(() => {
-      fills[0].style.width = '0%';
-      fills[1].style.width = '0%';
-      fills[2].style.width = '0%';
-      fills[3].style.width = '0%';
-    }, 300);
+    updateUI(loadProgress());
   });
 </script>
 
