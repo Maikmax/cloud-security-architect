@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marcus Paula — Cloud Security Architect</title>
+  <style>
+    :root {
+      --bg: #080c14;
+      --surface: #0e1420;
+      --surface2: #141b2d;
+      --border: #1e2d45;
+      --accent: #0ea5e9;
+      --accent2: #6366f1;
+      --accent3: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --text: #e2e8f0;
+      --muted: #64748b;
+      --muted2: #94a3b8;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── TOP NAV ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 3rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-brand {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted2);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 5rem 3rem 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: rgba(14,165,233,0.1);
+      border: 1px solid rgba(14,165,233,0.3);
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--muted2);
+      max-width: 680px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .stat-value {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ── SECTION ── */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .section-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      background: rgba(14,165,233,0.08);
+      border: 1px solid rgba(14,165,233,0.2);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    /* ── PROGRESS BAR ── */
+    .progress-wrapper {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .progress-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--muted2);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.25rem;
+    }
+
+    .phases-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .phase-segment {
+      height: 8px;
+      border-radius: 4px;
+      background: var(--border);
+      overflow: hidden;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .phase-segment:hover { opacity: 0.8; }
+
+    .phase-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 1s ease;
+    }
+
+    .phase-labels {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+    }
+
+    .phase-label {
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* ── ROADMAP PHASES ── */
+    .phases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+
+    .phase-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+      cursor: pointer;
+    }
+
+    .phase-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .phase-card.active { border-color: var(--accent); }
+    .phase-card.done { border-color: var(--accent3); }
+
+    .phase-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+    }
+
+    .phase-card.done::before {
+      background: var(--accent3);
+    }
+
+    .phase-num {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .phase-card.done .phase-num { color: var(--accent3); }
+
+    .phase-name {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .phase-weeks {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .phase-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .phase-items li {
+      font-size: 0.82rem;
+      color: var(--muted2);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .phase-items li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .phase-card.done .phase-items li::before { background: var(--accent3); }
+
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .project-card:hover {
+      border-color: var(--accent2);
+      transform: translateY(-2px);
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.75rem;
+    }
+
+    .project-icon {
+      font-size: 1.5rem;
+    }
+
+    .project-level {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+    }
+
+    .level-senior { background: rgba(239,68,68,0.15); color: #fc8181; }
+    .level-mid    { background: rgba(245,158,11,0.15); color: #fbbf24; }
+    .level-core   { background: rgba(16,185,129,0.15); color: #34d399; }
+
+    .project-name {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .project-desc {
+      font-size: 0.83rem;
+      color: var(--muted2);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--muted2);
+    }
+
+    /* ── STACK ── */
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .stack-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+
+    .stack-category {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .stack-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .stack-items li {
+      font-size: 0.82rem;
+      color: var(--muted2);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .stack-items li::before {
+      content: '→';
+      color: var(--accent);
+      font-size: 0.7rem;
+    }
+
+    /* ── SALARY ── */
+    .salary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .salary-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .salary-level {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .salary-value {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 0.25rem;
+    }
+
+    .salary-card.target .salary-value { color: var(--accent3); }
+    .salary-card.mid .salary-value    { color: var(--accent); }
+    .salary-card.top .salary-value    { color: #a78bfa; }
+
+    .salary-location {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    /* ── MOTIVATION ── */
+    .motivation-box {
+      background: linear-gradient(135deg, rgba(14,165,233,0.07), rgba(99,102,241,0.07));
+      border: 1px solid rgba(14,165,233,0.2);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .motivation-quote {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .motivation-quote span { color: var(--accent); }
+
+    .week-focus {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: rgba(14,165,233,0.1);
+      border: 1px solid rgba(14,165,233,0.25);
+      border-radius: 10px;
+      padding: 0.75rem 1.5rem;
+    }
+
+    .week-focus-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+    }
+
+    .week-focus-value {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    /* ── CHECKLIST ── */
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+
+    .checklist-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+    }
+
+    .checklist-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--muted2);
+      margin-bottom: 1rem;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+    }
+
+    .checklist-item:last-child { border-bottom: none; }
+
+    .check-box {
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--border);
+      border-radius: 4px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      font-size: 0.7rem;
+    }
+
+    .checklist-item.done .check-box {
+      background: var(--accent3);
+      border-color: var(--accent3);
+      color: white;
+    }
+
+    .check-text {
+      font-size: 0.83rem;
+      color: var(--muted2);
+      transition: color 0.2s;
+    }
+
+    .checklist-item.done .check-text {
+      color: var(--muted);
+      text-decoration: line-through;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 3rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    footer strong { color: var(--muted2); }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0 3rem;
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .hero, .section { padding: 2rem 1.5rem; }
+      .nav-links { display: none; }
+      .phases-bar, .phase-labels { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">Marcus Paula</div>
+  <ul class="nav-links">
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#stack">Stack</a></li>
+    <li><a href="#salary">Target</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">Cloud Security Architect</div>
+  <h1>Building the path to<br/><span>€150k+ in Security</span></h1>
+  <p class="hero-sub">
+    10 years of IT. Now going deep into Cloud Security Architecture — combining AWS security, DevSecOps, threat modeling, and AI security into a rare, high-value profile.
+  </p>
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-value">16</span>
+      <span class="stat-label">Weeks Total</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value">7</span>
+      <span class="stat-label">Portfolio Projects</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value">4</span>
+      <span class="stat-label">Specializations</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value">€150k+</span>
+      <span class="stat-label">Target Salary</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- MOTIVATION -->
+<section class="section">
+  <div class="motivation-box">
+    <p class="motivation-quote">
+      "The difference between a €90k engineer and a €150k architect is not more tools —
+      it's <span>thinking in risk, not in config</span>. Every project you build here
+      proves you solve business problems, not just technical ones."
+    </p>
+    <div class="week-focus">
+      <span class="week-focus-label">When it gets heavy, remember:</span>
+      <span class="week-focus-value">One week. One project. One skill at a time.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="section" id="roadmap">
+  <div class="section-header">
+    <span class="section-tag">Roadmap</span>
+    <h2 class="section-title">16-Week Architecture Plan</h2>
+  </div>
+
+  <div class="progress-wrapper">
+    <div class="progress-title">Overall Progress</div>
+    <div class="phases-bar">
+      <div class="phase-segment"><div class="phase-fill" style="width:0%;background:linear-gradient(90deg,#0ea5e9,#6366f1)"></div></div>
+      <div class="phase-segment"><div class="phase-fill" style="width:0%;background:linear-gradient(90deg,#6366f1,#a78bfa)"></div></div>
+      <div class="phase-segment"><div class="phase-fill" style="width:0%;background:linear-gradient(90deg,#a78bfa,#10b981)"></div></div>
+      <div class="phase-segment"><div class="phase-fill" style="width:0%;background:#10b981"></div></div>
+    </div>
+    <div class="phase-labels">
+      <span class="phase-label">Phase 1 — Foundation</span>
+      <span class="phase-label">Phase 2 — Automation</span>
+      <span class="phase-label">Phase 3 — Advanced</span>
+      <span class="phase-label">Phase 4 — Architect</span>
+    </div>
+  </div>
+
+  <div class="phases-grid">
+    <div class="phase-card active">
+      <div class="phase-num">Phase 1 · Weeks 1–4</div>
+      <div class="phase-name">AWS Security Foundation</div>
+      <div class="phase-weeks">Build the base. No shortcuts.</div>
+      <ul class="phase-items">
+        <li>IAM Federation + SCP</li>
+        <li>Multi-account Architecture</li>
+        <li>VPC Segmentation</li>
+        <li>Encryption Strategy (KMS)</li>
+        <li>CloudTrail + GuardDuty</li>
+        <li>Zero Trust Landing Zone</li>
+      </ul>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-num">Phase 2 · Weeks 5–8</div>
+      <div class="phase-name">DevSecOps & Automation</div>
+      <div class="phase-weeks">Security embedded in pipeline.</div>
+      <ul class="phase-items">
+        <li>Terraform + Checkov</li>
+        <li>GitHub Actions + OIDC</li>
+        <li>Trivy / tfsec scanning</li>
+        <li>Policy as Code (OPA)</li>
+        <li>Secret Detection Pipeline</li>
+        <li>Auto-remediation Lambda</li>
+      </ul>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-num">Phase 3 · Weeks 9–12</div>
+      <div class="phase-name">Containers & Runtime</div>
+      <div class="phase-weeks">Where big tech operates.</div>
+      <ul class="phase-items">
+        <li>Kubernetes Security (EKS)</li>
+        <li>Falco Runtime Detection</li>
+        <li>Kyverno Policy Engine</li>
+        <li>Container Hardening</li>
+        <li>Admission Controllers</li>
+        <li>Network Policies</li>
+      </ul>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-num">Phase 4 · Weeks 13–16</div>
+      <div class="phase-name">Architect Layer</div>
+      <div class="phase-weeks">This is what pays €150k+.</div>
+      <ul class="phase-items">
+        <li>STRIDE Threat Modeling</li>
+        <li>MITRE ATT&CK Cloud</li>
+        <li>Attack Path Analysis</li>
+        <li>AI Security (LLM / RAG)</li>
+        <li>Bedrock Guardrails</li>
+        <li>Incident Response Design</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+  <div class="section-header">
+    <span class="section-tag">Portfolio</span>
+    <h2 class="section-title">7 Projects That Get You Hired</h2>
+  </div>
+
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-icon">🏗️</span>
+        <span class="project-level level-core">Core</span>
+      </div>
+      <div class="project-name">AWS Zero Trust Landing Zone</div>
+      <div class="project-desc">Enterprise-grade multi-account AWS architecture with IAM Identity Center, SCP policies, centralized logging, and network segmentation.</div>
+      <div class="project-tags">
+        <span class="tag">Terraform</span>
+        <span class="tag">AWS Organizations</span>
+        <span class="tag">IAM</span>
+        <span class="tag">SCP</span>
+        <span class="tag">CloudTrail</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-icon">⚡</span>
+        <span class="project-level level-core">Core</span>
+      </div>
+      <div class="project-name">Cloud Incident Auto-Remediation</div>
+      <div class="project-desc">GuardDuty → EventBridge → Lambda pipeline that automatically isolates compromised EC2 instances, revokes credentials, and notifies security team.</div>
+      <div class="project-tags">
+        <span class="tag">GuardDuty</span>
+        <span class="tag">Lambda</span>
+        <span class="tag">EventBridge</span>
+        <span class="tag">Python</span>
+        <span class="tag">SNS</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-icon">🔒</span>
+        <span class="project-level level-core">Core</span>
+      </div>
+      <div class="project-name">Secure Terraform Pipeline</div>
+      <div class="project-desc">DevSecOps pipeline with IaC security scanning, OIDC authentication, drift detection, and automated compliance enforcement on every PR.</div>
+      <div class="project-tags">
+        <span class="tag">GitHub Actions</span>
+        <span class="tag">Checkov</span>
+        <span class="tag">tfsec</span>
+        <span class="tag">OIDC</span>
+        <span class="tag">Sentinel</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-icon">🕵️</span>
+        <span class="project-level level-mid">Mid</span>
+      </div>
+      <div class="project-name">Cloud Threat Hunting Platform</div>
+      <div class="project-desc">Centralized threat detection using CloudTrail + Athena queries mapped to MITRE ATT&CK. Detect privilege escalation, lateral movement, and data exfiltration.</div>
+      <div class="project-tags">
+        <span class="tag">Athena</span>
+        <span class="tag">MITRE ATT&CK</span>
+        <span class="tag">CloudTrail</span>
+        <span class="tag">Security Hub</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-icon">🐳</span>
+        <span class="project-level level-mid">Mid</span>
+      </div>
+      <div class="project-name">Kubernetes Runtime Security</div>
+      <div class="project-desc">EKS cluster hardened with Falco runtime detection, Kyverno policy enforcement, network policies, and pod security standards. Alerts on anomalous behavior.</div>
+      <div class="project-tags">
+        <span class="tag">EKS</span>
+        <span class="tag">Falco</span>
+        <span class="tag">Kyverno</span>
+        <span class="tag">OPA</span>
+        <span class="tag">Trivy</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-icon">🎯</span>
+        <span class="project-level level-senior">Senior</span>
+      </div>
+      <div class="project-name">Threat Model: AWS Architecture</div>
+      <div class="project-desc">STRIDE-based threat model for a real-world multi-tier AWS application. Attack paths, risk scoring, mitigation architecture, and detection strategy.</div>
+      <div class="project-tags">
+        <span class="tag">STRIDE</span>
+        <span class="tag">Attack Paths</span>
+        <span class="tag">Risk Matrix</span>
+        <span class="tag">Architecture Diagrams</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-icon">🤖</span>
+        <span class="project-level level-senior">Senior</span>
+      </div>
+      <div class="project-name">AI Security Framework</div>
+      <div class="project-desc">Security controls for LLM workloads: prompt injection defense, Bedrock Guardrails, RAG access control, input/output moderation. OWASP Top 10 LLM coverage.</div>
+      <div class="project-tags">
+        <span class="tag">Bedrock</span>
+        <span class="tag">OWASP LLM</span>
+        <span class="tag">Guardrails</span>
+        <span class="tag">RAG Security</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- STACK -->
+<section class="section" id="stack">
+  <div class="section-header">
+    <span class="section-tag">Tech Stack</span>
+    <h2 class="section-title">Tools by Domain</h2>
+  </div>
+
+  <div class="stack-grid">
+    <div class="stack-card">
+      <div class="stack-category">AWS Core</div>
+      <ul class="stack-items">
+        <li>IAM / Identity Center</li>
+        <li>GuardDuty / Security Hub</li>
+        <li>CloudTrail / Config</li>
+        <li>KMS / Secrets Manager</li>
+        <li>VPC / Network Firewall</li>
+      </ul>
+    </div>
+    <div class="stack-card">
+      <div class="stack-category">Infrastructure as Code</div>
+      <ul class="stack-items">
+        <li>Terraform</li>
+        <li>AWS CloudFormation</li>
+        <li>Checkov / tfsec</li>
+        <li>Open Policy Agent</li>
+        <li>Sentinel</li>
+      </ul>
+    </div>
+    <div class="stack-card">
+      <div class="stack-category">Container Security</div>
+      <ul class="stack-items">
+        <li>Kubernetes / EKS</li>
+        <li>Falco</li>
+        <li>Kyverno</li>
+        <li>Trivy</li>
+        <li>Istio (service mesh)</li>
+      </ul>
+    </div>
+    <div class="stack-card">
+      <div class="stack-category">Threat Detection</div>
+      <ul class="stack-items">
+        <li>MITRE ATT&CK Cloud</li>
+        <li>STRIDE Framework</li>
+        <li>Athena (log analysis)</li>
+        <li>Stratus Red Team</li>
+        <li>Pacu / CloudGoat</li>
+      </ul>
+    </div>
+    <div class="stack-card">
+      <div class="stack-category">DevSecOps</div>
+      <ul class="stack-items">
+        <li>GitHub Actions</li>
+        <li>OIDC Authentication</li>
+        <li>Snyk / Trivy</li>
+        <li>gitleaks / trufflehog</li>
+        <li>Dependabot</li>
+      </ul>
+    </div>
+    <div class="stack-card">
+      <div class="stack-category">Automation / Code</div>
+      <ul class="stack-items">
+        <li>Python (boto3)</li>
+        <li>Go</li>
+        <li>Lambda functions</li>
+        <li>EventBridge rules</li>
+        <li>Step Functions</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- SALARY -->
+<section class="section" id="salary">
+  <div class="section-header">
+    <span class="section-tag">Target</span>
+    <h2 class="section-title">Salary Benchmarks — Cloud Security</h2>
+  </div>
+
+  <div class="salary-grid">
+    <div class="salary-card">
+      <div class="salary-level">Engineer · Dublin</div>
+      <div class="salary-value">€80k–€110k</div>
+      <div class="salary-location">Entry / Mid Level</div>
+    </div>
+    <div class="salary-card mid">
+      <div class="salary-level">Senior Engineer · Dublin</div>
+      <div class="salary-value">€130k–€160k</div>
+      <div class="salary-location">Senior Level</div>
+    </div>
+    <div class="salary-card target">
+      <div class="salary-level">Architect · Europe</div>
+      <div class="salary-value">€160k–€200k</div>
+      <div class="salary-location">Target Role</div>
+    </div>
+    <div class="salary-card top">
+      <div class="salary-level">Architect · US Big Tech</div>
+      <div class="salary-value">$250k–$350k</div>
+      <div class="salary-location">FAANG / TikTok / Stripe</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- CHECKLIST -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-tag">Weekly Focus</span>
+    <h2 class="section-title">When It Gets Heavy — Do This</h2>
+  </div>
+
+  <div class="checklist-grid">
+    <div class="checklist-card">
+      <div class="checklist-title">Daily Minimum (2h)</div>
+      <div class="checklist-item" onclick="toggle(this)">
+        <div class="check-box">✓</div>
+        <span class="check-text">1 AWS lab or Terraform config</span>
+      </div>
+      <div class="checklist-item" onclick="toggle(this)">
+        <div class="check-box">✓</div>
+        <span class="check-text">Document what you built (README)</span>
+      </div>
+      <div class="checklist-item" onclick="toggle(this)">
+        <div class="check-box">✓</div>
+        <span class="check-text">Commit to GitHub</span>
+      </div>
+      <div class="checklist-item" onclick="toggle(this)">
+        <div class="check-box">✓</div>
+        <span class="check-text">Read 1 security advisory or blog</span>
+      </div>
+    </div>
+
+    <div class="checklist-card">
+      <div class="checklist-title">Weekly Minimum</div>
+      <div class="checklist-item" onclick="toggle(this)">
+        <div class="check-box">✓</div>
+        <span class="check-text">One project milestone pushed to GitHub</span>
+      </div>
+      <div class="checklist-item" onclick="toggle(this)">
+        <div class="check-box">✓</div>
+        <span class="check-text">Architecture diagram updated</span>
+      </div>
+      <div class="checklist-item" onclick="toggle(this)">
+        <div class="check-box">✓</div>
+        <span class="check-text">Simulate one attack (Pacu / CloudGoat)</span>
+      </div>
+      <div class="checklist-item" onclick="toggle(this)">
+        <div class="check-box">✓</div>
+        <span class="check-text">Review progress against roadmap</span>
+      </div>
+    </div>
+
+    <div class="checklist-card">
+      <div class="checklist-title">If You Feel Like Quitting</div>
+      <div class="checklist-item" onclick="toggle(this)">
+        <div class="check-box">✓</div>
+        <span class="check-text">Do only 30 minutes — not zero</span>
+      </div>
+      <div class="checklist-item" onclick="toggle(this)">
+        <div class="check-box">✓</div>
+        <span class="check-text">Look at the salary table above</span>
+      </div>
+      <div class="checklist-item" onclick="toggle(this)">
+        <div class="check-box">✓</div>
+        <span class="check-text">Push one small commit — anything</span>
+      </div>
+      <div class="checklist-item" onclick="toggle(this)">
+        <div class="check-box">✓</div>
+        <span class="check-text">Remember: 10 years got you here. 16 weeks finishes it.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <strong>Marcus Paula</strong> &nbsp;·&nbsp; Cloud Security Architect &nbsp;·&nbsp;
+  <a href="https://github.com/Maikmax" target="_blank" style="color:#0ea5e9;text-decoration:none;">github.com/Maikmax</a>
+</footer>
+
+<script>
+  function toggle(el) {
+    el.classList.toggle('done');
+  }
+
+  // Animate progress bars on load
+  window.addEventListener('load', () => {
+    const fills = document.querySelectorAll('.phase-fill');
+    setTimeout(() => {
+      fills[0].style.width = '0%';
+      fills[1].style.width = '0%';
+      fills[2].style.width = '0%';
+      fills[3].style.width = '0%';
+    }, 300);
+  });
+</script>
+
+</body>
+</html>
