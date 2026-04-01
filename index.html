@@ -4,6 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Marcus Paula — Cloud Security Architect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
     :root {
       --bg: #080c14;
@@ -23,7 +24,7 @@
     * { margin:0; padding:0; box-sizing:border-box; }
 
     body {
-      font-family: 'Segoe UI', system-ui, sans-serif;
+      font-family: 'Outfit', 'Segoe UI', system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
@@ -257,6 +258,93 @@
     /* ── DIVIDER ── */
     .divider { border: none; border-top: 1px solid var(--border); margin: 0 3rem; }
 
+    /* ── STICKY STATS BAR ── */
+    .sticky-stats {
+      position: sticky; top: 60px; z-index: 90;
+      background: rgba(8,12,20,0.95);
+      border-bottom: 1px solid var(--border);
+      padding: 0.6rem 3rem;
+      display: flex; align-items: center; gap: 2rem;
+      backdrop-filter: blur(10px);
+    }
+    .sticky-stat { display: flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; }
+    .sticky-stat-val { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--accent); font-size: 0.9rem; }
+    .sticky-progress-wrap { flex: 1; height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+    .sticky-progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3)); border-radius: 3px; transition: width 0.4s ease; width: 0%; }
+    .sticky-pct { font-family: 'JetBrains Mono', monospace; font-weight: 800; color: var(--accent3); font-size: 0.9rem; }
+
+    /* ── WEEK TASK CHECKBOXES ── */
+    .week-task-check { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.55rem 0; border-bottom: 1px solid var(--border); cursor: pointer; user-select: none; }
+    .week-task-check:last-child { border-bottom: none; }
+    .week-task-check input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--accent3); cursor: pointer; flex-shrink: 0; margin-top: 2px; }
+    .week-task-check label { font-size: 0.83rem; color: var(--muted2); line-height: 1.4; cursor: pointer; width: 100%; }
+    .week-task-check input:checked + label { text-decoration: line-through; opacity: 0.45; }
+    .week-card-new { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; transition: border-color 0.2s; }
+    .week-card-new.all-done { border-color: var(--accent3); background: rgba(16,185,129,0.04); }
+    .week-card-new.in-progress { border-color: var(--accent); }
+    .week-done-badge { display: none; font-size: 0.68rem; font-weight: 700; color: var(--accent3); background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); padding: 0.15rem 0.5rem; border-radius: 4px; }
+    .week-card-new.all-done .week-done-badge { display: inline-flex; }
+
+    /* ── HABIT TRACKER ── */
+    .habit-grid { display: grid; grid-template-columns: repeat(10, 1fr); gap: 10px; max-width: 600px; margin: 1.5rem auto; }
+    .habit-day { aspect-ratio: 1; background: var(--surface2); border: 2px solid var(--border); border-radius: 6px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-weight: 700; font-size: 0.82rem; font-family: 'JetBrains Mono', monospace; color: var(--muted); transition: all 0.2s; user-select: none; }
+    .habit-day.done { background: var(--accent); border-color: var(--accent); color: #000; box-shadow: 0 0 10px rgba(14,165,233,0.4); transform: scale(1.05); }
+    .habit-day:hover:not(.done) { border-color: rgba(14,165,233,0.4); }
+    .habit-counter { text-align: center; margin-top: 1rem; font-family: 'JetBrains Mono', monospace; color: var(--accent); font-weight: 700; font-size: 1rem; }
+
+    /* ── ZERO TRUST PILLARS ── */
+    .zt-pillar { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; margin-bottom: 1rem; }
+    .zt-pillar-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; cursor: pointer; }
+    .zt-pillar input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--accent3); cursor: pointer; flex-shrink: 0; }
+    .zt-pillar-title { font-size: 1rem; font-weight: 700; }
+    .zt-items { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; padding-left: 2.25rem; }
+    .zt-items li { font-size: 0.83rem; color: var(--muted2); line-height: 1.5; display: flex; gap: 0.5rem; }
+    .zt-items li::before { content: '→'; color: var(--accent); font-size: 0.7rem; flex-shrink: 0; margin-top: 2px; }
+    .zt-items li strong { color: var(--accent); }
+    .mono { font-family: 'JetBrains Mono', monospace; font-size: 0.8em; background: var(--surface2); padding: 0.1rem 0.35rem; border-radius: 3px; color: var(--accent); }
+
+    /* ── AI MICRO-STEPS ── */
+    .ai-project { background: var(--surface); border: 1px solid rgba(14,165,233,0.2); border-radius: 14px; padding: 1.5rem; margin-bottom: 1.25rem; }
+    .ai-project-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--text); }
+    .ai-project-sub { font-size: 0.82rem; color: var(--muted2); margin-bottom: 1rem; line-height: 1.5; }
+    .micro-step { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.6rem 0; border-bottom: 1px solid var(--border); user-select: none; }
+    .micro-step:last-child { border-bottom: none; }
+    .micro-step input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--accent3); cursor: pointer; flex-shrink: 0; margin-top: 2px; }
+    .micro-step label { font-size: 0.82rem; color: var(--muted2); line-height: 1.5; cursor: pointer; }
+    .micro-step input:checked + label { text-decoration: line-through; opacity: 0.4; }
+    .ms-tag { font-size: 0.7rem; font-weight: 700; padding: 0.1rem 0.4rem; border-radius: 3px; margin-right: 0.4rem; }
+    .ms-cyan   { background: rgba(14,165,233,0.15); color: #38bdf8; }
+    .ms-purple { background: rgba(99,102,241,0.15); color: #a5b4fc; }
+    .ms-green  { background: rgba(16,185,129,0.15); color: #34d399; }
+    .ms-orange { background: rgba(245,158,11,0.15); color: #fbbf24; }
+
+    /* ── SWOT / PERSONAL X-RAY ── */
+    .swot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-bottom: 3rem; }
+    .swot-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; }
+    .swot-title { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 1rem; }
+    .swot-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .swot-list li { font-size: 0.83rem; color: var(--muted2); line-height: 1.4; display: flex; gap: 0.5rem; }
+    .swot-list li::before { content: '·'; font-size: 1.2rem; flex-shrink: 0; margin-top: -2px; }
+    .swot-green .swot-title { color: var(--accent3); }
+    .swot-green .swot-list li::before { color: var(--accent3); }
+    .swot-yellow .swot-title { color: var(--warning); }
+    .swot-yellow .swot-list li::before { color: var(--warning); }
+    .swot-blue .swot-title { color: var(--accent); }
+    .swot-blue .swot-list li::before { color: var(--accent); }
+
+    /* ── RESOURCES ── */
+    .resources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
+    .resource-card { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent2); border-radius: 12px; padding: 1.25rem; transition: transform 0.2s; }
+    .resource-card:hover { transform: translateY(-2px); }
+    .resource-card h4 { font-size: 0.92rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .resource-card p { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.6rem; line-height: 1.5; }
+    .resource-link { font-size: 0.78rem; font-weight: 700; color: var(--accent); text-decoration: none; display: block; margin-top: 0.3rem; }
+    .resource-link:hover { color: var(--text); }
+
+    /* ── INSIGHT BOX ── */
+    .insight-box { background: rgba(14,165,233,0.05); border-left: 4px solid var(--accent); border-radius: 0 12px 12px 0; padding: 1.25rem 1.5rem; margin-bottom: 2rem; font-size: 0.9rem; color: var(--muted2); line-height: 1.6; }
+    .insight-box strong { color: var(--accent); }
+
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
       .hero, .section { padding: 2rem 1.5rem; }
@@ -264,6 +352,8 @@
       .phases-bar, .phase-labels { grid-template-columns: repeat(2, 1fr); }
       .week-body-grid { grid-template-columns: 1fr; }
       .risk-opp-grid { grid-template-columns: 1fr; }
+      .sticky-stats { padding: 0.6rem 1.5rem; gap: 1rem; }
+      .habit-grid { grid-template-columns: repeat(6, 1fr); }
     }
   </style>
 </head>
@@ -284,6 +374,14 @@
     <li><a href="#salary">Target</a></li>
   </ul>
 </nav>
+
+<!-- STICKY STATS -->
+<div class="sticky-stats">
+  <div class="sticky-stat"><span>Tasks</span><span class="sticky-stat-val" id="sTasksDone">0</span><span style="color:var(--muted);font-size:0.75rem" id="sTasksTotal">/ 0</span></div>
+  <div class="sticky-stat"><span>Weeks</span><span class="sticky-stat-val" id="sWeeks">0</span><span style="color:var(--muted);font-size:0.75rem">/16</span></div>
+  <div class="sticky-progress-wrap"><div class="sticky-progress-fill" id="sProgressFill"></div></div>
+  <span class="sticky-pct" id="sProgressPct">0%</span>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -414,522 +512,198 @@
     <h2 class="section-title">Week by Week — What to Build</h2>
   </div>
 
-  <div class="week-accordion">
+  <div id="weekCardsGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.25rem;margin-bottom:3rem;">
 
-    <!-- PHASE 1 -->
-    <div class="week-item" onclick="toggleWeek(this)">
-      <div class="week-header">
-        <span class="week-num">Week 1</span>
-        <span class="week-title">AWS Multi-Account Setup + IAM Architecture</span>
-        <span class="week-phase-badge badge-p1">Phase 1</span>
-        <span class="week-arrow">▶</span>
+    <div class="week-card-new" id="wc1">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+        <span class="week-num">Week 1</span><span class="week-title" style="flex:1">IAM + Multi-Account Setup</span>
+        <span class="week-phase-badge badge-p1">Phase 1</span><span class="week-done-badge">✓ Done</span>
       </div>
-      <div class="week-body">
-        <div class="week-body-grid">
-          <div>
-            <div class="week-col-title">Study</div>
-            <ul class="week-task-list">
-              <li>AWS Organizations structure</li>
-              <li>Management account vs member accounts</li>
-              <li>Service Control Policies (SCP)</li>
-              <li>IAM Identity Center (SSO)</li>
-            </ul>
-          </div>
-          <div>
-            <div class="week-col-title">Build</div>
-            <ul class="week-task-list">
-              <li>Create 3-account structure: security / dev / prod</li>
-              <li>Apply SCP to restrict dangerous actions</li>
-              <li>Configure IAM Identity Center with groups</li>
-              <li>Document architecture in README</li>
-            </ul>
-          </div>
-        </div>
-        <div class="week-deliverable"><strong>GitHub deliverable:</strong> aws-zero-trust-landing-zone / week1-iam-multiacccount</div>
-      </div>
+      <div class="week-task-check"><input type="checkbox" id="t1_1" class="wtask" data-week="1"><label for="t1_1"><strong>Architect:</strong> Create 3-account AWS org (security / dev / prod) + MFA on root</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t1_2" class="wtask" data-week="1"><label for="t1_2"><strong>SCP Baseline:</strong> Apply SCP blocking CloudTrail deletion + non-approved regions</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t1_3" class="wtask" data-week="1"><label for="t1_3"><strong>Zero Static Keys:</strong> Configure IAM Identity Center — no long-lived access keys</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t1_4" class="wtask" data-week="1"><label for="t1_4">Study: AWS Organizations + IAM federation with Azure AD / Okta</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t1_5" class="wtask" data-week="1"><label for="t1_5">Cantrill SAA-C03: IAM foundation modules</label></div>
+      <div class="week-deliverable" style="margin-top:0.75rem"><strong>GitHub:</strong> aws-architecture-labs — Root SCP + org structure documented</div>
     </div>
 
-    <div class="week-item" onclick="toggleWeek(this)">
-      <div class="week-header">
-        <span class="week-num">Week 2</span>
-        <span class="week-title">VPC Security + Network Segmentation</span>
-        <span class="week-phase-badge badge-p1">Phase 1</span>
-        <span class="week-arrow">▶</span>
+    <div class="week-card-new" id="wc2">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+        <span class="week-num">Week 2</span><span class="week-title" style="flex:1">VPC Security + Network Segmentation</span>
+        <span class="week-phase-badge badge-p1">Phase 1</span><span class="week-done-badge">✓ Done</span>
       </div>
-      <div class="week-body">
-        <div class="week-body-grid">
-          <div>
-            <div class="week-col-title">Study</div>
-            <ul class="week-task-list">
-              <li>VPC design patterns for security</li>
-              <li>NACL vs Security Groups — when to use each</li>
-              <li>VPC Flow Logs analysis</li>
-              <li>Private subnets + NAT Gateway</li>
-            </ul>
-          </div>
-          <div>
-            <div class="week-col-title">Build</div>
-            <ul class="week-task-list">
-              <li>Design 3-tier VPC (public / private / data)</li>
-              <li>Enable VPC Flow Logs → CloudWatch</li>
-              <li>Create NACLs blocking lateral movement</li>
-              <li>Draw architecture diagram (draw.io)</li>
-            </ul>
-          </div>
-        </div>
-        <div class="week-deliverable"><strong>GitHub deliverable:</strong> vpc-security-architecture with diagram + Terraform</div>
-      </div>
+      <div class="week-task-check"><input type="checkbox" id="t2_1" class="wtask" data-week="2"><label for="t2_1"><strong>3-Tier VPC:</strong> public / private / data subnets with proper routing</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t2_2" class="wtask" data-week="2"><label for="t2_2"><strong>NACL vs SG:</strong> Nmap your own Apache, block it with stateless NACL</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t2_3" class="wtask" data-week="2"><label for="t2_3"><strong>Zero SSH:</strong> Remove internet routes from EC2 — access only via SSM PrivateLink</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t2_4" class="wtask" data-week="2"><label for="t2_4">Enable VPC Flow Logs → S3 + CloudWatch</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t2_5" class="wtask" data-week="2"><label for="t2_5">Draw architecture diagram (draw.io) and post on LinkedIn</label></div>
+      <div class="week-deliverable" style="margin-top:0.75rem"><strong>GitHub:</strong> vpc-security-architecture — diagram + Terraform</div>
     </div>
 
-    <div class="week-item" onclick="toggleWeek(this)">
-      <div class="week-header">
-        <span class="week-num">Week 3</span>
-        <span class="week-title">Encryption Strategy + Secrets Management</span>
-        <span class="week-phase-badge badge-p1">Phase 1</span>
-        <span class="week-arrow">▶</span>
+    <div class="week-card-new" id="wc3">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+        <span class="week-num">Week 3</span><span class="week-title" style="flex:1">KMS Encryption + DFIR Athena</span>
+        <span class="week-phase-badge badge-p1">Phase 1</span><span class="week-done-badge">✓ Done</span>
       </div>
-      <div class="week-body">
-        <div class="week-body-grid">
-          <div>
-            <div class="week-col-title">Study</div>
-            <ul class="week-task-list">
-              <li>KMS key types (CMK, data keys)</li>
-              <li>Envelope encryption pattern</li>
-              <li>Secrets Manager vs Parameter Store</li>
-              <li>S3 encryption best practices</li>
-            </ul>
-          </div>
-          <div>
-            <div class="week-col-title">Build</div>
-            <ul class="week-task-list">
-              <li>Create CMK with key rotation policy</li>
-              <li>Encrypt S3, RDS, EBS with KMS</li>
-              <li>Store secrets with automatic rotation</li>
-              <li>Write KMS key policy denying root access</li>
-            </ul>
-          </div>
-        </div>
-        <div class="week-deliverable"><strong>GitHub deliverable:</strong> encryption-strategy-aws — policies + Terraform modules</div>
-      </div>
+      <div class="week-task-check"><input type="checkbox" id="t3_1" class="wtask" data-week="3"><label for="t3_1"><strong>KMS CMK:</strong> Create CMK with auto-rotation for RDS + S3 + EBS</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t3_2" class="wtask" data-week="3"><label for="t3_2"><strong>S3 Hardening:</strong> Bucket policy: <span class="mono">aws:SecureTransport=false → Deny</span></label></div>
+      <div class="week-task-check"><input type="checkbox" id="t3_3" class="wtask" data-week="3"><label for="t3_3"><strong>Athena Forensics:</strong> SQL query against CloudTrail S3 — find all ConsoleLogin events</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t3_4" class="wtask" data-week="3"><label for="t3_4">Write KMS key policy denying root access</label></div>
+      <div class="week-deliverable" style="margin-top:0.75rem"><strong>GitHub:</strong> encryption-strategy-aws — DFIR runbook + Athena SQL</div>
     </div>
 
-    <div class="week-item" onclick="toggleWeek(this)">
-      <div class="week-header">
-        <span class="week-num">Week 4</span>
-        <span class="week-title">CloudTrail + GuardDuty + Security Hub</span>
-        <span class="week-phase-badge badge-p1">Phase 1</span>
-        <span class="week-arrow">▶</span>
+    <div class="week-card-new" id="wc4">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+        <span class="week-num">Week 4</span><span class="week-title" style="flex:1">Prowler + GuardDuty + Security Hub</span>
+        <span class="week-phase-badge badge-p1">Phase 1</span><span class="week-done-badge">✓ Done</span>
       </div>
-      <div class="week-body">
-        <div class="week-body-grid">
-          <div>
-            <div class="week-col-title">Study</div>
-            <ul class="week-task-list">
-              <li>CloudTrail org-level configuration</li>
-              <li>GuardDuty threat detection categories</li>
-              <li>Security Hub standards (CIS, FSBP)</li>
-              <li>Config rules for compliance</li>
-            </ul>
-          </div>
-          <div>
-            <div class="week-col-title">Build</div>
-            <ul class="week-task-list">
-              <li>Enable CloudTrail across all accounts</li>
-              <li>Enable GuardDuty + Security Hub</li>
-              <li>Create EventBridge rule for critical findings</li>
-              <li>Set up SNS alert for GuardDuty HIGH severity</li>
-            </ul>
-          </div>
-        </div>
-        <div class="week-deliverable"><strong>GitHub deliverable:</strong> aws-detection-baseline — Phase 1 complete project</div>
-      </div>
+      <div class="week-task-check"><input type="checkbox" id="t4_1" class="wtask" data-week="4"><label for="t4_1"><strong>CIS Benchmark:</strong> Run Prowler — fix 5 critical findings</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t4_2" class="wtask" data-week="4"><label for="t4_2">Enable CloudTrail org-level + GuardDuty + Security Hub</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t4_3" class="wtask" data-week="4"><label for="t4_3"><strong>EventBridge Alert:</strong> SNS notification on GuardDuty HIGH severity</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t4_4" class="wtask" data-week="4"><label for="t4_4">Force EBS encryption by default (account-level setting)</label></div>
+      <div class="week-deliverable" style="margin-top:0.75rem" style="color:#34d399"><strong>🏆 Phase 1 Complete:</strong> aws-detection-baseline + Prowler report on GitHub</div>
     </div>
 
-    <!-- PHASE 2 -->
-    <div class="week-item" onclick="toggleWeek(this)">
-      <div class="week-header">
-        <span class="week-num">Week 5</span>
-        <span class="week-title">Terraform Security + IaC Scanning</span>
-        <span class="week-phase-badge badge-p2">Phase 2</span>
-        <span class="week-arrow">▶</span>
+    <div class="week-card-new" id="wc5">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+        <span class="week-num">Week 5</span><span class="week-title" style="flex:1">Terraform + OIDC — No Static Keys</span>
+        <span class="week-phase-badge badge-p2">Phase 2</span><span class="week-done-badge">✓ Done</span>
       </div>
-      <div class="week-body">
-        <div class="week-body-grid">
-          <div>
-            <div class="week-col-title">Study</div>
-            <ul class="week-task-list">
-              <li>Terraform modules for security</li>
-              <li>Checkov security rules for AWS</li>
-              <li>tfsec ruleset</li>
-              <li>Terraform state security (S3 + DynamoDB)</li>
-            </ul>
-          </div>
-          <div>
-            <div class="week-col-title">Build</div>
-            <ul class="week-task-list">
-              <li>Write secure VPC module in Terraform</li>
-              <li>Run Checkov — fix all HIGH findings</li>
-              <li>Secure state bucket with encryption + versioning</li>
-              <li>Create reusable IAM role module</li>
-            </ul>
-          </div>
-        </div>
-        <div class="week-deliverable"><strong>GitHub deliverable:</strong> terraform-secure-modules — IaC with zero Checkov HIGH findings</div>
-      </div>
+      <div class="week-task-check"><input type="checkbox" id="t5_1" class="wtask" data-week="5"><label for="t5_1">Recode Week 2 VPC entirely in Terraform (HCL)</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t5_2" class="wtask" data-week="5"><label for="t5_2"><strong>OIDC Integration:</strong> GitHub Actions → AWS via OIDC role — zero passwords stored</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t5_3" class="wtask" data-week="5"><label for="t5_3"><strong>Secret Scanning:</strong> Add gitleaks + trufflehog to pre-commit hooks + CI</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t5_4" class="wtask" data-week="5"><label for="t5_4">Secure Terraform state (S3 + DynamoDB locking + encryption)</label></div>
+      <div class="week-deliverable" style="margin-top:0.75rem"><strong>GitHub:</strong> terraform-secure-modules — pipeline running, zero leaked keys</div>
     </div>
 
-    <div class="week-item" onclick="toggleWeek(this)">
-      <div class="week-header">
-        <span class="week-num">Week 6</span>
-        <span class="week-title">GitHub Actions + OIDC + CI/CD Security</span>
-        <span class="week-phase-badge badge-p2">Phase 2</span>
-        <span class="week-arrow">▶</span>
+    <div class="week-card-new" id="wc6">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+        <span class="week-num">Week 6</span><span class="week-title" style="flex:1">Checkov + Pacu Attack + Auto-Remediation</span>
+        <span class="week-phase-badge badge-p2">Phase 2</span><span class="week-done-badge">✓ Done</span>
       </div>
-      <div class="week-body">
-        <div class="week-body-grid">
-          <div>
-            <div class="week-col-title">Study</div>
-            <ul class="week-task-list">
-              <li>OIDC authentication for GitHub Actions</li>
-              <li>Least privilege IAM roles for CI/CD</li>
-              <li>Secrets scanning in pipelines</li>
-              <li>Supply chain security (SBOM)</li>
-            </ul>
-          </div>
-          <div>
-            <div class="week-col-title">Build</div>
-            <ul class="week-task-list">
-              <li>Configure GitHub Actions with OIDC (no long-lived keys)</li>
-              <li>Add Trivy container scanning to pipeline</li>
-              <li>Add gitleaks secret detection</li>
-              <li>Enforce PR checks before merge</li>
-            </ul>
-          </div>
-        </div>
-        <div class="week-deliverable"><strong>GitHub deliverable:</strong> devsecops-pipeline — full CI/CD with security gates</div>
-      </div>
+      <div class="week-task-check"><input type="checkbox" id="t6_1" class="wtask" data-week="6"><label for="t6_1"><strong>Shift-Left:</strong> Add Checkov + tfsec to CI — fail pipeline on CRITICAL findings</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t6_2" class="wtask" data-week="6"><label for="t6_2"><strong>Red Team Lab:</strong> Use Pacu to enumerate your own AWS honeypot account</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t6_3" class="wtask" data-week="6"><label for="t6_3"><strong>Auto-Healing:</strong> GuardDuty → EventBridge → Lambda isolate compromised EC2</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t6_4" class="wtask" data-week="6"><label for="t6_4"><strong>OPA:</strong> Write policy denying public subnets in Terraform by default</label></div>
+      <div class="week-deliverable" style="margin-top:0.75rem"><strong>GitHub:</strong> cloud-incident-auto-remediation — full auto-healing flow</div>
     </div>
 
-    <div class="week-item" onclick="toggleWeek(this)">
-      <div class="week-header">
-        <span class="week-num">Week 7</span>
-        <span class="week-title">Policy as Code — OPA + Sentinel</span>
-        <span class="week-phase-badge badge-p2">Phase 2</span>
-        <span class="week-arrow">▶</span>
+    <div class="week-card-new" id="wc7">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+        <span class="week-num">Week 7</span><span class="week-title" style="flex:1">AWS WAF + Macie + Security Specialty Prep</span>
+        <span class="week-phase-badge badge-p2">Phase 2</span><span class="week-done-badge">✓ Done</span>
       </div>
-      <div class="week-body">
-        <div class="week-body-grid">
-          <div>
-            <div class="week-col-title">Study</div>
-            <ul class="week-task-list">
-              <li>Open Policy Agent (OPA) concepts</li>
-              <li>Rego policy language basics</li>
-              <li>Conftest for Terraform + Kubernetes</li>
-              <li>HashiCorp Sentinel for Terraform Cloud</li>
-            </ul>
-          </div>
-          <div>
-            <div class="week-col-title">Build</div>
-            <ul class="week-task-list">
-              <li>Write OPA policy: deny public S3 buckets</li>
-              <li>Write OPA policy: require encryption on all resources</li>
-              <li>Integrate Conftest into GitHub Actions</li>
-              <li>Block non-compliant PRs automatically</li>
-            </ul>
-          </div>
-        </div>
-        <div class="week-deliverable"><strong>GitHub deliverable:</strong> policy-as-code-framework — OPA + Conftest policies library</div>
-      </div>
+      <div class="week-task-check"><input type="checkbox" id="t7_1" class="wtask" data-week="7"><label for="t7_1"><strong>WAF L7:</strong> ALB + WAF blocking geo-IP injections — screenshot proof</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t7_2" class="wtask" data-week="7"><label for="t7_2"><strong>Macie GDPR:</strong> Scan S3 bucket for PII (credit cards, SSNs)</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t7_3" class="wtask" data-week="7"><label for="t7_3">Start AWS Security Specialty (SCS-C02) course — Zeal Vora</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t7_4" class="wtask" data-week="7"><label for="t7_4">Write OPA + Sentinel policies for Terraform compliance</label></div>
+      <div class="week-deliverable" style="margin-top:0.75rem"><strong>GitHub:</strong> policy-as-code-framework — OPA + Conftest library</div>
     </div>
 
-    <div class="week-item" onclick="toggleWeek(this)">
-      <div class="week-header">
-        <span class="week-num">Week 8</span>
-        <span class="week-title">Cloud Incident Auto-Remediation</span>
-        <span class="week-phase-badge badge-p2">Phase 2</span>
-        <span class="week-arrow">▶</span>
+    <div class="week-card-new" id="wc8">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+        <span class="week-num">Week 8</span><span class="week-title" style="flex:1">AWS SAA-C03 Certification</span>
+        <span class="week-phase-badge badge-p2">Phase 2</span><span class="week-done-badge">✓ Done</span>
       </div>
-      <div class="week-body">
-        <div class="week-body-grid">
-          <div>
-            <div class="week-col-title">Study</div>
-            <ul class="week-task-list">
-              <li>GuardDuty finding types + severity</li>
-              <li>EventBridge rule patterns</li>
-              <li>Lambda isolation patterns</li>
-              <li>Step Functions for IR workflows</li>
-            </ul>
-          </div>
-          <div>
-            <div class="week-col-title">Build</div>
-            <ul class="week-task-list">
-              <li>GuardDuty → EventBridge → Lambda pipeline</li>
-              <li>Lambda: isolate EC2 (remove from SG)</li>
-              <li>Lambda: revoke IAM credentials automatically</li>
-              <li>SNS notification to security team</li>
-            </ul>
-          </div>
-        </div>
-        <div class="week-deliverable"><strong>GitHub deliverable:</strong> cloud-incident-auto-remediation — Phase 2 complete</div>
-      </div>
+      <div class="week-task-check"><input type="checkbox" id="t8_1" class="wtask" data-week="8"><label for="t8_1">Mock exams (Jon Bonso) — target 80%+</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t8_2" class="wtask" data-week="8"><label for="t8_2">Review architecture decision patterns (SAA-C03)</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t8_3" class="wtask" data-week="8"><label for="t8_3"><strong>MILESTONE: Pass SAA-C03 — Pearson VUE exam</strong></label></div>
+      <div class="week-deliverable" style="margin-top:0.75rem;color:#34d399"><strong>🏆 Phase 2 Complete:</strong> SAA-C03 badge + DevSecOps pipeline live</div>
     </div>
 
-    <!-- PHASE 3 -->
-    <div class="week-item" onclick="toggleWeek(this)">
-      <div class="week-header">
-        <span class="week-num">Week 9</span>
-        <span class="week-title">EKS Security Baseline</span>
-        <span class="week-phase-badge badge-p3">Phase 3</span>
-        <span class="week-arrow">▶</span>
+    <div class="week-card-new" id="wc9">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+        <span class="week-num">Week 9</span><span class="week-title" style="flex:1">EKS Security Baseline</span>
+        <span class="week-phase-badge badge-p3">Phase 3</span><span class="week-done-badge">✓ Done</span>
       </div>
-      <div class="week-body">
-        <div class="week-body-grid">
-          <div>
-            <div class="week-col-title">Study</div>
-            <ul class="week-task-list">
-              <li>Kubernetes RBAC deep dive</li>
-              <li>Pod Security Standards (restricted)</li>
-              <li>EKS IAM Roles for Service Accounts (IRSA)</li>
-              <li>Network policies with Calico</li>
-            </ul>
-          </div>
-          <div>
-            <div class="week-col-title">Build</div>
-            <ul class="week-task-list">
-              <li>Create EKS cluster (private endpoint)</li>
-              <li>Apply restricted pod security standards</li>
-              <li>Configure IRSA — no EC2 instance profiles</li>
-              <li>Add network policies: deny all ingress by default</li>
-            </ul>
-          </div>
-        </div>
-        <div class="week-deliverable"><strong>GitHub deliverable:</strong> kubernetes-security-baseline — hardened EKS cluster</div>
-      </div>
+      <div class="week-task-check"><input type="checkbox" id="t9_1" class="wtask" data-week="9"><label for="t9_1">Create EKS cluster with private endpoint only</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t9_2" class="wtask" data-week="9"><label for="t9_2"><strong>IRSA:</strong> Configure IAM Roles for Service Accounts — remove all EC2 instance profiles</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t9_3" class="wtask" data-week="9"><label for="t9_3">Apply restricted Pod Security Standards across all namespaces</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t9_4" class="wtask" data-week="9"><label for="t9_4">Network policies: deny-all ingress by default, allow explicit</label></div>
+      <div class="week-deliverable" style="margin-top:0.75rem"><strong>GitHub:</strong> kubernetes-security-baseline — hardened EKS cluster</div>
     </div>
 
-    <div class="week-item" onclick="toggleWeek(this)">
-      <div class="week-header">
-        <span class="week-num">Week 10</span>
-        <span class="week-title">Falco + Runtime Threat Detection</span>
-        <span class="week-phase-badge badge-p3">Phase 3</span>
-        <span class="week-arrow">▶</span>
+    <div class="week-card-new" id="wc10">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+        <span class="week-num">Week 10</span><span class="week-title" style="flex:1">Falco + Kyverno + Container Supply Chain</span>
+        <span class="week-phase-badge badge-p3">Phase 3</span><span class="week-done-badge">✓ Done</span>
       </div>
-      <div class="week-body">
-        <div class="week-body-grid">
-          <div>
-            <div class="week-col-title">Study</div>
-            <ul class="week-task-list">
-              <li>Falco architecture + eBPF driver</li>
-              <li>Falco rules language</li>
-              <li>Container escape detection</li>
-              <li>Runtime anomaly patterns</li>
-            </ul>
-          </div>
-          <div>
-            <div class="week-col-title">Build</div>
-            <ul class="week-task-list">
-              <li>Deploy Falco via Helm on EKS</li>
-              <li>Write custom rule: detect shell in container</li>
-              <li>Alert on privilege escalation attempts</li>
-              <li>Forward alerts to Security Hub</li>
-            </ul>
-          </div>
-        </div>
-        <div class="week-deliverable"><strong>GitHub deliverable:</strong> falco-runtime-security — custom rules + alert pipeline</div>
-      </div>
+      <div class="week-task-check"><input type="checkbox" id="t10_1" class="wtask" data-week="10"><label for="t10_1">Deploy Falco via Helm — write rule: detect shell spawn in container</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t10_2" class="wtask" data-week="10"><label for="t10_2"><strong>Kyverno:</strong> Deny root containers + require image digest (no latest)</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t10_3" class="wtask" data-week="10"><label for="t10_3">Scan images with Trivy in CI — block CRITICAL CVEs</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t10_4" class="wtask" data-week="10"><label for="t10_4">Sign images with Cosign + verify signature in Kyverno policy</label></div>
+      <div class="week-deliverable" style="margin-top:0.75rem"><strong>GitHub:</strong> falco-runtime-security + kyverno-policies + container-supply-chain</div>
     </div>
 
-    <div class="week-item" onclick="toggleWeek(this)">
-      <div class="week-header">
-        <span class="week-num">Week 11</span>
-        <span class="week-title">Kyverno Policy Enforcement</span>
-        <span class="week-phase-badge badge-p3">Phase 3</span>
-        <span class="week-arrow">▶</span>
+    <div class="week-card-new" id="wc11">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+        <span class="week-num">Week 11</span><span class="week-title" style="flex:1">Dublin Job Hunt + LinkedIn Engineering</span>
+        <span class="week-phase-badge badge-p3">Phase 3</span><span class="week-done-badge">✓ Done</span>
       </div>
-      <div class="week-body">
-        <div class="week-body-grid">
-          <div>
-            <div class="week-col-title">Study</div>
-            <ul class="week-task-list">
-              <li>Kyverno vs OPA Gatekeeper</li>
-              <li>Admission controllers in Kubernetes</li>
-              <li>ClusterPolicy vs Policy scope</li>
-              <li>Mutating vs Validating webhooks</li>
-            </ul>
-          </div>
-          <div>
-            <div class="week-col-title">Build</div>
-            <ul class="week-task-list">
-              <li>Deny containers running as root</li>
-              <li>Require image digest (no latest tag)</li>
-              <li>Auto-add security labels on namespaces</li>
-              <li>Block privileged containers in prod</li>
-            </ul>
-          </div>
-        </div>
-        <div class="week-deliverable"><strong>GitHub deliverable:</strong> kyverno-policies — library of security policies</div>
-      </div>
+      <div class="week-task-check"><input type="checkbox" id="t11_1" class="wtask" data-week="11"><label for="t11_1">Pin 3 GitHub repos: Auto-Remediation + OIDC Pipeline + Threat Model</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t11_2" class="wtask" data-week="11"><label for="t11_2">LinkedIn headline: <em>"Cloud Security Architect | IAM &amp; Zero Trust | SAA-C03 | Dublin"</em></label></div>
+      <div class="week-task-check"><input type="checkbox" id="t11_3" class="wtask" data-week="11"><label for="t11_3">AWS User Group Dublin — attend 1 meetup, deliver value</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t11_4" class="wtask" data-week="11"><label for="t11_4">ISACA Ireland — connect with hiring managers at Grand Canal Dock</label></div>
+      <div class="week-deliverable" style="margin-top:0.75rem"><strong>Milestone:</strong> Profile upgraded. 5+ applications sent. Network activated.</div>
     </div>
 
-    <div class="week-item" onclick="toggleWeek(this)">
-      <div class="week-header">
-        <span class="week-num">Week 12</span>
-        <span class="week-title">Container Image Security + Supply Chain</span>
-        <span class="week-phase-badge badge-p3">Phase 3</span>
-        <span class="week-arrow">▶</span>
+    <div class="week-card-new" id="wc12">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+        <span class="week-num">Week 12</span><span class="week-title" style="flex:1">Phase 3 Wrap + CKS Exam Prep</span>
+        <span class="week-phase-badge badge-p3">Phase 3</span><span class="week-done-badge">✓ Done</span>
       </div>
-      <div class="week-body">
-        <div class="week-body-grid">
-          <div>
-            <div class="week-col-title">Study</div>
-            <ul class="week-task-list">
-              <li>Trivy deep dive — CVE scanning</li>
-              <li>Dockerfile best practices (rootless)</li>
-              <li>SBOM generation with Syft</li>
-              <li>Image signing with Cosign</li>
-            </ul>
-          </div>
-          <div>
-            <div class="week-col-title">Build</div>
-            <ul class="week-task-list">
-              <li>Scan images in CI — block on CRITICAL CVEs</li>
-              <li>Harden Dockerfile (non-root, read-only FS)</li>
-              <li>Generate SBOM and attach to image</li>
-              <li>Sign images with Cosign + verify in Kyverno</li>
-            </ul>
-          </div>
-        </div>
-        <div class="week-deliverable"><strong>GitHub deliverable:</strong> container-supply-chain-security — Phase 3 complete</div>
-      </div>
+      <div class="week-task-check"><input type="checkbox" id="t12_1" class="wtask" data-week="12"><label for="t12_1">kube-bench CIS — fix all failing controls on EKS</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t12_2" class="wtask" data-week="12"><label for="t12_2">Complete container supply chain security project end-to-end</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t12_3" class="wtask" data-week="12"><label for="t12_3">Start CKS (Certified Kubernetes Security) exam preparation</label></div>
+      <div class="week-deliverable" style="margin-top:0.75rem;color:#34d399"><strong>🏆 Phase 3 Complete:</strong> K8s security portfolio ready</div>
     </div>
 
-    <!-- PHASE 4 -->
-    <div class="week-item" onclick="toggleWeek(this)">
-      <div class="week-header">
-        <span class="week-num">Week 13</span>
-        <span class="week-title">STRIDE Threat Modeling</span>
-        <span class="week-phase-badge badge-p4">Phase 4</span>
-        <span class="week-arrow">▶</span>
+    <div class="week-card-new" id="wc13">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+        <span class="week-num">Week 13</span><span class="week-title" style="flex:1">STRIDE Threat Modeling</span>
+        <span class="week-phase-badge badge-p4">Phase 4</span><span class="week-done-badge">✓ Done</span>
       </div>
-      <div class="week-body">
-        <div class="week-body-grid">
-          <div>
-            <div class="week-col-title">Study</div>
-            <ul class="week-task-list">
-              <li>STRIDE methodology (all 6 categories)</li>
-              <li>Data Flow Diagrams (DFDs)</li>
-              <li>MITRE ATT&CK for Cloud (matrix)</li>
-              <li>Attack tree construction</li>
-            </ul>
-          </div>
-          <div>
-            <div class="week-col-title">Build</div>
-            <ul class="week-task-list">
-              <li>Threat model a 3-tier AWS application</li>
-              <li>Map STRIDE to MITRE ATT&CK techniques</li>
-              <li>Build attack path: public ALB → data exfil</li>
-              <li>Document mitigations per threat</li>
-            </ul>
-          </div>
-        </div>
-        <div class="week-deliverable"><strong>GitHub deliverable:</strong> threat-model-aws-architecture — full STRIDE analysis</div>
-      </div>
+      <div class="week-task-check"><input type="checkbox" id="t13_1" class="wtask" data-week="13"><label for="t13_1">Threat model a 3-tier AWS app using STRIDE framework</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t13_2" class="wtask" data-week="13"><label for="t13_2">Map STRIDE threats to MITRE ATT&amp;CK Cloud techniques</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t13_3" class="wtask" data-week="13"><label for="t13_3">Build full attack path: public ALB → EC2 → IAM abuse → S3 exfil</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t13_4" class="wtask" data-week="13"><label for="t13_4">Document mitigations + detection strategy per threat</label></div>
+      <div class="week-deliverable" style="margin-top:0.75rem"><strong>GitHub:</strong> threat-model-aws-architecture — full STRIDE + MITRE analysis</div>
     </div>
 
-    <div class="week-item" onclick="toggleWeek(this)">
-      <div class="week-header">
-        <span class="week-num">Week 14</span>
-        <span class="week-title">Cloud Threat Hunting + Log Analysis</span>
-        <span class="week-phase-badge badge-p4">Phase 4</span>
-        <span class="week-arrow">▶</span>
+    <div class="week-card-new" id="wc14">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+        <span class="week-num">Week 14</span><span class="week-title" style="flex:1">Cloud Threat Hunting + Athena</span>
+        <span class="week-phase-badge badge-p4">Phase 4</span><span class="week-done-badge">✓ Done</span>
       </div>
-      <div class="week-body">
-        <div class="week-body-grid">
-          <div>
-            <div class="week-col-title">Study</div>
-            <ul class="week-task-list">
-              <li>CloudTrail log structure (deep)</li>
-              <li>Athena for security analysis</li>
-              <li>Detection rules for IAM abuse</li>
-              <li>VPC Flow Log analysis patterns</li>
-            </ul>
-          </div>
-          <div>
-            <div class="week-col-title">Build</div>
-            <ul class="week-task-list">
-              <li>Write Athena queries: detect privilege escalation</li>
-              <li>Detect: AssumeRole chains</li>
-              <li>Detect: S3 data exfiltration via GetObject volume</li>
-              <li>Dashboard in CloudWatch for top threats</li>
-            </ul>
-          </div>
-        </div>
-        <div class="week-deliverable"><strong>GitHub deliverable:</strong> cloud-threat-hunting — Athena queries library + MITRE mapping</div>
-      </div>
+      <div class="week-task-check"><input type="checkbox" id="t14_1" class="wtask" data-week="14"><label for="t14_1">Athena query: detect IAM privilege escalation in CloudTrail</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t14_2" class="wtask" data-week="14"><label for="t14_2">Detect: AssumeRole chains across accounts</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t14_3" class="wtask" data-week="14"><label for="t14_3">Detect: S3 data exfiltration by GetObject volume anomaly</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t14_4" class="wtask" data-week="14"><label for="t14_4">CloudWatch dashboard: top 5 threat detections live</label></div>
+      <div class="week-deliverable" style="margin-top:0.75rem"><strong>GitHub:</strong> cloud-threat-hunting — Athena SQL library mapped to MITRE</div>
     </div>
 
-    <div class="week-item" onclick="toggleWeek(this)">
-      <div class="week-header">
-        <span class="week-num">Week 15</span>
-        <span class="week-title">AI Security Framework (LLM / RAG)</span>
-        <span class="week-phase-badge badge-p4">Phase 4</span>
-        <span class="week-arrow">▶</span>
+    <div class="week-card-new" id="wc15">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+        <span class="week-num">Week 15</span><span class="week-title" style="flex:1">AI Security Framework (LLM / RAG)</span>
+        <span class="week-phase-badge badge-p4">Phase 4</span><span class="week-done-badge">✓ Done</span>
       </div>
-      <div class="week-body">
-        <div class="week-body-grid">
-          <div>
-            <div class="week-col-title">Study</div>
-            <ul class="week-task-list">
-              <li>OWASP Top 10 for LLM Applications</li>
-              <li>Prompt injection attack patterns</li>
-              <li>Bedrock Guardrails configuration</li>
-              <li>RAG security — data poisoning prevention</li>
-            </ul>
-          </div>
-          <div>
-            <div class="week-col-title">Build</div>
-            <ul class="week-task-list">
-              <li>Deploy Bedrock Guardrails with input/output filters</li>
-              <li>Test prompt injection against your guardrails</li>
-              <li>Implement IAM-scoped RAG access control</li>
-              <li>Document OWASP LLM Top 10 mitigations</li>
-            </ul>
-          </div>
-        </div>
-        <div class="week-deliverable"><strong>GitHub deliverable:</strong> ai-security-framework — rare, high-value project</div>
-      </div>
+      <div class="week-task-check"><input type="checkbox" id="t15_1" class="wtask" data-week="15"><label for="t15_1">Deploy Bedrock Guardrails — input filter + output moderation</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t15_2" class="wtask" data-week="15"><label for="t15_2">Test prompt injection attacks against your own guardrails</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t15_3" class="wtask" data-week="15"><label for="t15_3">Implement IAM-scoped RAG access control (user sees only authorized data)</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t15_4" class="wtask" data-week="15"><label for="t15_4">Document OWASP LLM Top 10 mitigations for your architecture</label></div>
+      <div class="week-deliverable" style="margin-top:0.75rem"><strong>GitHub:</strong> ai-security-framework — rarest project in your portfolio</div>
     </div>
 
-    <div class="week-item" onclick="toggleWeek(this)">
-      <div class="week-header">
-        <span class="week-num">Week 16</span>
-        <span class="week-title">Portfolio Review + Interview Prep</span>
-        <span class="week-phase-badge badge-p4">Phase 4</span>
-        <span class="week-arrow">▶</span>
+    <div class="week-card-new" id="wc16">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+        <span class="week-num">Week 16</span><span class="week-title" style="flex:1">Portfolio Polish + Interview Sprint</span>
+        <span class="week-phase-badge badge-p4">Phase 4</span><span class="week-done-badge">✓ Done</span>
       </div>
-      <div class="week-body">
-        <div class="week-body-grid">
-          <div>
-            <div class="week-col-title">Polish</div>
-            <ul class="week-task-list">
-              <li>All repos have architecture diagrams</li>
-              <li>All READMEs explain the "why", not just the "what"</li>
-              <li>Each project has a threat model section</li>
-              <li>GitHub profile README linking all projects</li>
-            </ul>
-          </div>
-          <div>
-            <div class="week-col-title">Prepare</div>
-            <ul class="week-task-list">
-              <li>Practice top 10 interview questions (below)</li>
-              <li>Write 3 STAR stories from your 10 years</li>
-              <li>Update LinkedIn with project highlights</li>
-              <li>Apply to 5 Cloud Security Architect roles</li>
-            </ul>
-          </div>
-        </div>
-        <div class="week-deliverable"><strong>Milestone:</strong> Portfolio complete. Ready to apply. 🎯</div>
-      </div>
+      <div class="week-task-check"><input type="checkbox" id="t16_1" class="wtask" data-week="16"><label for="t16_1">All repos have architecture diagrams + threat model section</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t16_2" class="wtask" data-week="16"><label for="t16_2">Prepare 3 STAR stories from 10 years of IT experience</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t16_3" class="wtask" data-week="16"><label for="t16_3">Practice top 10 interview questions (section below)</label></div>
+      <div class="week-task-check"><input type="checkbox" id="t16_4" class="wtask" data-week="16"><label for="t16_4">Submit 15+ applications — Cloud Security Architect / Senior Engineer</label></div>
+      <div class="week-deliverable" style="margin-top:0.75rem;color:#34d399"><strong>🏆 Phase 4 Complete. Portfolio live. Ready to close offers.</strong></div>
     </div>
 
   </div>
@@ -1628,55 +1402,374 @@
   </div>
 </section>
 
+<hr class="divider"/>
+
+<!-- ZERO TRUST PILLARS -->
+<section class="section" id="zerotrust">
+  <div class="section-header">
+    <span class="section-tag">Zero Trust</span>
+    <h2 class="section-title">3 Pillars — What the €150k Interview Asks</h2>
+  </div>
+
+  <div class="insight-box">
+    <strong>Architect language:</strong> Don't say "I configured a firewall". Say "I mitigated lateral movement via L4 segmentation based on STRIDE analysis." These 3 pillars are the exact architecture a Cloud Security Architect must prove — check them off as you implement each.
+  </div>
+
+  <div class="zt-pillar" id="zt1">
+    <div class="zt-pillar-header">
+      <input type="checkbox" id="ztc1" class="ztask">
+      <label for="ztc1" class="zt-pillar-title">Pillar 1 — Identity as Perimeter (Identity-First)</label>
+    </div>
+    <ul class="zt-items">
+      <li>Replace all IAM Users + long-lived access keys with <strong>IAM Identity Center (SSO)</strong> — federated with Azure AD or Okta</li>
+      <li>Configure <strong>OIDC federation</strong> between GitHub Actions and AWS — no passwords stored anywhere in the pipeline</li>
+      <li>Apply <strong>Permissions Boundaries</strong> to cap the maximum privilege any role can ever grant, even if the IAM policy allows more</li>
+      <li>Use <strong>IAM Access Analyzer</strong> to detect unused permissions and external access automatically</li>
+    </ul>
+  </div>
+
+  <div class="zt-pillar" id="zt2">
+    <div class="zt-pillar-header">
+      <input type="checkbox" id="ztc2" class="ztask">
+      <label for="ztc2" class="zt-pillar-title">Pillar 2 — Micro-Segmentation (Zero Exposure Network)</label>
+    </div>
+    <ul class="zt-items">
+      <li>No Bastion Hosts with port 22 open — all server access via <strong>AWS Systems Manager (SSM)</strong> over PrivateLink</li>
+      <li>Stateless <strong>NACLs</strong> blocking confirmed attack flows detected in VPC Flow Logs</li>
+      <li>VPC endpoints for all AWS service communication — no traffic leaves your VPC for S3, KMS, Secrets Manager</li>
+      <li>Kubernetes: <strong>network policies deny-all</strong> by default — only explicit allow rules permitted</li>
+    </ul>
+  </div>
+
+  <div class="zt-pillar" id="zt3">
+    <div class="zt-pillar-header">
+      <input type="checkbox" id="ztc3" class="ztask">
+      <label for="ztc3" class="zt-pillar-title">Pillar 3 — Continuous Encryption (Data At-Rest &amp; In-Transit)</label>
+    </div>
+    <ul class="zt-items">
+      <li>Mandatory <strong>AWS KMS CMK</strong> on all storage: S3, EBS, RDS, DynamoDB — with automatic annual rotation</li>
+      <li>S3 bucket policy enforcing <span class="mono">aws:SecureTransport: true</span> — reject all non-TLS requests</li>
+      <li>Kubernetes: <strong>External Secrets Operator</strong> pulling from Secrets Manager — zero secrets in YAML files</li>
+      <li>Enable <strong>EBS encryption by default</strong> at account level — no instance can launch with unencrypted disk</li>
+    </ul>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- AI MICRO-STEPS -->
+<section class="section" id="aiprojects">
+  <div class="section-header">
+    <span class="section-tag">AI Projects</span>
+    <h2 class="section-title">Micro-Steps — Build the Rarest Profile in Dublin</h2>
+  </div>
+
+  <div class="ai-project">
+    <div class="ai-project-title">Project A: AI Cloud Incident Response Bot (SOC L1 Automation)</div>
+    <div class="ai-project-sub">GuardDuty detects a threat → Lambda calls Bedrock → Claude analyzes the JSON → posts structured remediation to your Slack/Teams SOC channel automatically.</div>
+    <div class="micro-step"><input type="checkbox" id="ai1_1" class="atask"><label for="ai1_1"><span class="ms-tag ms-cyan">Step 1</span> Create Lambda Execution Role — allow ONLY <span class="mono">logs:CreateLogGroup</span> + <span class="mono">bedrock:InvokeModel</span> (PoLP)</label></div>
+    <div class="micro-step"><input type="checkbox" id="ai1_2" class="atask"><label for="ai1_2"><span class="ms-tag ms-cyan">Step 2</span> EventBridge rule: pattern <span class="mono">"source": ["aws.guardduty"]</span> → route JSON to Lambda</label></div>
+    <div class="micro-step"><input type="checkbox" id="ai1_3" class="atask"><label for="ai1_3"><span class="ms-tag ms-cyan">Step 3</span> Python (boto3): extract <span class="mono">event['detail']</span> arrays → send to Bedrock (Claude Haiku) via <span class="mono">bedrock-runtime</span></label></div>
+    <div class="micro-step"><input type="checkbox" id="ai1_4" class="atask"><label for="ai1_4"><span class="ms-tag ms-cyan">Step 4</span> System prompt: <em>"Act as a L3 Forensic Expert. Identify the attacking IAM entity, the cloud event, the risk, and list immediate IAM/network isolation mitigations."</em></label></div>
+    <div class="micro-step"><input type="checkbox" id="ai1_5" class="atask"><label for="ai1_5"><span class="ms-tag ms-cyan">Step 5</span> <span class="mono">requests.post()</span> webhook → SOC channel in Teams/Slack with structured alert</label></div>
+  </div>
+
+  <div class="ai-project">
+    <div class="ai-project-title">Project B: AI Security Review Pipeline (Autonomous DevSecOps)</div>
+    <div class="ai-project-sub">Terraform PR opened → Checkov scans → Bedrock reviews the failing HCL → auto-posts a corrected code suggestion directly on the Pull Request.</div>
+    <div class="micro-step"><input type="checkbox" id="ai2_1" class="atask"><label for="ai2_1"><span class="ms-tag ms-purple">Step 1</span> Create <span class="mono">.github/workflows/ai-sec.yml</span> — trigger on pull_request events only</label></div>
+    <div class="micro-step"><input type="checkbox" id="ai2_2" class="atask"><label for="ai2_2"><span class="ms-tag ms-purple">Step 2</span> Run <span class="mono">checkov -o json</span> — capture failing findings, fail pipeline on unencrypted RDS</label></div>
+    <div class="micro-step"><input type="checkbox" id="ai2_3" class="atask"><label for="ai2_3"><span class="ms-tag ms-purple">Step 3</span> Send failing <span class="mono">.tf</span> file + Checkov JSON to Bedrock/OpenAI — request corrected HCL block</label></div>
+    <div class="micro-step"><input type="checkbox" id="ai2_4" class="atask"><label for="ai2_4"><span class="ms-tag ms-purple">Step 4</span> Use <span class="mono">GITHUB_TOKEN</span> to post AI suggestion as PR review comment with corrected code</label></div>
+    <div class="micro-step"><input type="checkbox" id="ai2_5" class="atask"><label for="ai2_5"><span class="ms-tag ms-green">OWASP</span> Add Bedrock Guardrails + prompt injection tests to protect the AI pipeline itself</label></div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- 30-DAY HABIT TRACKER -->
+<section class="section" id="habit">
+  <div class="section-header">
+    <span class="section-tag">Habit Tracker</span>
+    <h2 class="section-title">30-Day Focus Challenge — 2h Per Day</h2>
+  </div>
+
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;margin-bottom:3rem;text-align:center;">
+    <p style="color:var(--muted2);margin-bottom:1.5rem;font-size:0.95rem;">Intelligence does not beat consistency. <strong style="color:var(--text)">2 focused hours every day.</strong> Click a day when you complete your session. Progress is saved.</p>
+    <div class="habit-grid" id="habitGrid"></div>
+    <p class="habit-counter" id="habitCounter">Days Focused: 0 / 30</p>
+    <button onclick="resetHabit()" style="margin-top:1rem;padding:0.4rem 1.2rem;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:0.78rem;cursor:pointer;">Reset Tracker</button>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- SWOT / PERSONAL X-RAY -->
+<section class="section" id="xray">
+  <div class="section-header">
+    <span class="section-tag">Personal X-Ray</span>
+    <h2 class="section-title">Your Strategic Position — Marcus Paula</h2>
+  </div>
+
+  <div class="swot-grid">
+    <div class="swot-card swot-green">
+      <div class="swot-title">Real Market Advantages</div>
+      <ul class="swot-list">
+        <li>Irish residency — eliminates visa friction for EMEA hiring</li>
+        <li>TikTok EMEA on CV = instant global authority signal</li>
+        <li>10 years L3 infrastructure = battle-tested under real pressure</li>
+        <li>Offensive mindset (HTB) merged with cloud defense architecture</li>
+        <li>Rare combo: AWS + K8s + DevSecOps + AI security in one profile</li>
+      </ul>
+    </div>
+    <div class="swot-card swot-yellow">
+      <div class="swot-title">Gaps Being Fixed (Weeks 1–16)</div>
+      <ul class="swot-list">
+        <li>Technical certs → SAA-C03 by Week 8, CKS by Week 14</li>
+        <li>GitHub portfolio → 7 projects built and documented</li>
+        <li>LinkedIn visibility → headline + featured projects by Week 11</li>
+        <li>Dublin network → ISACA + AWS User Group activated</li>
+      </ul>
+    </div>
+    <div class="swot-card swot-blue">
+      <div class="swot-title">Absolute Objectives (OKRs)</div>
+      <ul class="swot-list">
+        <li>Month 2: SAA-C03 certified</li>
+        <li>Month 3: Dublin network active + 15 applications sent</li>
+        <li>Month 4: First offer negotiation at €90k–€120k base</li>
+        <li>Month 6: Architect role at €150k+ or Big Tech pipeline open</li>
+        <li>Bonus: AI Security + K8s Security on GitHub = top 5% profile</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="insight-box">
+    <strong>The €150k insight:</strong> Stop talking about individual tools. Start talking about <strong>risk management and control architecture</strong>. A Cloud Security Architect is the person who designs the strategy that others implement. Every interview answer should start with the risk, not the tool.
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- RESOURCES -->
+<section class="section" id="resources">
+  <div class="section-header">
+    <span class="section-tag">Resources</span>
+    <h2 class="section-title">Books, Podcasts &amp; Communities</h2>
+  </div>
+
+  <div class="resources-grid">
+    <div class="resource-card" style="border-left-color:#10b981">
+      <h4>Dylan Shields — AWS Security</h4>
+      <p>Deep focus on IAM and identity architecture in real enterprise environments.</p>
+      <a class="resource-link" href="https://www.manning.com/books/aws-security" target="_blank">Manning Press →</a>
+    </div>
+    <div class="resource-card" style="border-left-color:#ff9900">
+      <h4>Chris Dotson — Cloud Native Security</h4>
+      <p>How to think "Security as Code" — architecture-first approach.</p>
+      <a class="resource-link" href="https://www.oreilly.com/library/view/cloud-native-security/9781492025000/" target="_blank">O'Reilly →</a>
+    </div>
+    <div class="resource-card" style="border-left-color:#6366f1">
+      <h4>Evan Gilman — Zero Trust Networks</h4>
+      <p>The architectural bible for Zero Trust. Read before every interview.</p>
+      <a class="resource-link" href="https://www.oreilly.com/library/view/zero-trust-networks/9781491952319/" target="_blank">O'Reilly →</a>
+    </div>
+    <div class="resource-card" style="border-left-color:#0ea5e9">
+      <h4>Cloud Security Podcast</h4>
+      <p>Best cloud security podcast in the world. Listen while commuting.</p>
+      <a class="resource-link" href="https://cloudsecuritypodcast.tv/" target="_blank">cloudsecuritypodcast.tv →</a>
+    </div>
+    <div class="resource-card" style="border-left-color:#f43f5e">
+      <h4>IppSec / John Hammond</h4>
+      <p>HTB-level defense thinking. Sharpens your offensive-defensive mindset.</p>
+      <a class="resource-link" href="https://www.youtube.com/c/ippsec" target="_blank">YouTube →</a>
+    </div>
+    <div class="resource-card" style="border-left-color:#10b981">
+      <h4>AWS User Group Dublin</h4>
+      <p>Attend monthly. This is where Dublin hiring managers are. In person only.</p>
+      <a class="resource-link" href="https://www.meetup.com/awsug-dublin/" target="_blank">Meetup →</a>
+    </div>
+    <div class="resource-card" style="border-left-color:#f59e0b">
+      <h4>ISACA Ireland Chapter</h4>
+      <p>CISO-level network in Dublin. Essential for Architect-level connections.</p>
+      <a class="resource-link" href="https://www.eventbrite.ie/o/isaca-ireland-chapter-11075677028" target="_blank">Eventbrite →</a>
+    </div>
+    <div class="resource-card" style="border-left-color:#ff9900">
+      <h4>My AWS Security Arsenal</h4>
+      <p>Toniblyx's curated list of every AWS security tool worth knowing.</p>
+      <a class="resource-link" href="https://github.com/toniblyx/my-arsenal-of-aws-security-tools" target="_blank">GitHub →</a>
+    </div>
+    <div class="resource-card" style="border-left-color:#6366f1">
+      <h4>Automate the Boring Stuff (Python)</h4>
+      <p>Learn only what matters: JSON manipulation, dicts, HTTP requests for boto3.</p>
+      <a class="resource-link" href="https://automatetheboringstuff.com/" target="_blank">Free online →</a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- CHECKLIST (kept from original) -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-tag">Daily Focus</span>
+    <h2 class="section-title">When It Gets Heavy — Do This</h2>
+  </div>
+
+  <div class="checklist-grid">
+    <div class="checklist-card">
+      <div class="checklist-title">Daily Minimum (2h)</div>
+      <div class="checklist-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">1 AWS lab or Terraform config</span></div>
+      <div class="checklist-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Document what you built (README)</span></div>
+      <div class="checklist-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Commit to GitHub</span></div>
+      <div class="checklist-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Read 1 security advisory or blog</span></div>
+    </div>
+    <div class="checklist-card">
+      <div class="checklist-title">Weekly Minimum</div>
+      <div class="checklist-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">One project milestone pushed to GitHub</span></div>
+      <div class="checklist-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Architecture diagram updated</span></div>
+      <div class="checklist-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Simulate one attack (Pacu / CloudGoat)</span></div>
+      <div class="checklist-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Review progress against roadmap</span></div>
+    </div>
+    <div class="checklist-card">
+      <div class="checklist-title">If You Feel Like Quitting</div>
+      <div class="checklist-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Do only 30 minutes — not zero</span></div>
+      <div class="checklist-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Look at the salary table above</span></div>
+      <div class="checklist-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Push one small commit — anything</span></div>
+      <div class="checklist-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Remember: 10 years got you here. 16 weeks finishes it.</span></div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <strong>Marcus Paula</strong> &nbsp;·&nbsp; Cloud Security Architect &nbsp;·&nbsp;
   <a href="https://github.com/Maikmax" target="_blank" style="color:#0ea5e9;text-decoration:none;">github.com/Maikmax</a>
 </footer>
 
 <script>
-  // ── Toggle functions ──
-  function toggleWeek(el) { el.classList.toggle('open'); }
+  // ── Accordion toggles ──
   function toggleInterview(el) { el.classList.toggle('open'); }
   function toggleCheck(el) { el.classList.toggle('done'); }
 
-  // ── Phase progress ──
-  const STORAGE_KEY = 'maikmax_phase_progress';
-
-  function loadProgress() {
-    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [0,0,0,0]; }
+  // ── Phase progress (manual override buttons) ──
+  function loadPhases() {
+    try { return JSON.parse(localStorage.getItem('mp_phases')) || [0,0,0,0]; }
     catch(e) { return [0,0,0,0]; }
   }
-
-  function saveProgress(arr) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
-  }
-
-  function updateUI(arr) {
+  function savePhases(arr) { localStorage.setItem('mp_phases', JSON.stringify(arr)); }
+  function updatePhaseUI(arr) {
     arr.forEach((pct, i) => {
-      document.getElementById('fill' + i).style.width = pct + '%';
-      const card = document.getElementById('phaseCard' + i);
-      if (pct === 100) { card.classList.add('done'); card.classList.remove('active'); }
-      else if (pct > 0) { card.classList.add('active'); card.classList.remove('done'); }
+      document.getElementById('fill'+i).style.width = pct+'%';
+      const card = document.getElementById('phaseCard'+i);
+      if(pct===100){ card.classList.add('done'); card.classList.remove('active'); }
+      else if(pct>0){ card.classList.add('active'); card.classList.remove('done'); }
+      else { card.classList.remove('done','active'); }
     });
-    const total = Math.round(arr.reduce((a,b) => a+b, 0) / arr.length);
-    document.getElementById('progressPct').textContent = total + '%';
+    const total = Math.round(arr.reduce((a,b)=>a+b,0)/arr.length);
+    document.getElementById('progressPct').textContent = total+'%';
   }
-
   function setPhase(idx) {
-    const arr = loadProgress();
-    arr[idx] = arr[idx] === 100 ? 0 : 100;
-    saveProgress(arr);
-    updateUI(arr);
+    const arr = loadPhases();
+    arr[idx] = arr[idx]===100?0:100;
+    savePhases(arr); updatePhaseUI(arr); updateStickyBar();
   }
-
   function resetProgress() {
-    saveProgress([0,0,0,0]);
-    updateUI([0,0,0,0]);
+    savePhases([0,0,0,0]); updatePhaseUI([0,0,0,0]); updateStickyBar();
   }
 
-  // ── Init ──
+  // ── Weekly task checkboxes ──
+  function initWeekTasks() {
+    document.querySelectorAll('.wtask').forEach(cb => {
+      const saved = localStorage.getItem('mp_task_'+cb.id);
+      if(saved==='true') cb.checked = true;
+      cb.addEventListener('change', () => {
+        localStorage.setItem('mp_task_'+cb.id, cb.checked);
+        checkWeekCompletion(cb.dataset.week);
+        updateStickyBar();
+      });
+    });
+    // Zero Trust
+    document.querySelectorAll('.ztask').forEach(cb => {
+      if(localStorage.getItem('mp_zt_'+cb.id)==='true') cb.checked=true;
+      cb.addEventListener('change',()=>{ localStorage.setItem('mp_zt_'+cb.id,cb.checked); });
+    });
+    // AI micro-steps
+    document.querySelectorAll('.atask').forEach(cb => {
+      if(localStorage.getItem('mp_ai_'+cb.id)==='true') cb.checked=true;
+      cb.addEventListener('change',()=>{ localStorage.setItem('mp_ai_'+cb.id,cb.checked); });
+    });
+    // Init week completion badges
+    for(let w=1;w<=16;w++) checkWeekCompletion(w);
+  }
+
+  function checkWeekCompletion(weekNum) {
+    const tasks = document.querySelectorAll(`.wtask[data-week="${weekNum}"]`);
+    const card = document.getElementById('wc'+weekNum);
+    if(!card||!tasks.length) return;
+    const done = Array.from(tasks).filter(c=>c.checked).length;
+    card.classList.remove('all-done','in-progress');
+    if(done===tasks.length) card.classList.add('all-done');
+    else if(done>0) card.classList.add('in-progress');
+  }
+
+  // ── Sticky stats bar ──
+  function updateStickyBar() {
+    const all = document.querySelectorAll('.wtask');
+    const done = Array.from(all).filter(c=>c.checked).length;
+    const pct = all.length ? Math.round((done/all.length)*100) : 0;
+    document.getElementById('sTasksDone').textContent = done;
+    document.getElementById('sTasksTotal').textContent = '/ '+all.length;
+    document.getElementById('sProgressFill').style.width = pct+'%';
+    document.getElementById('sProgressPct').textContent = pct+'%';
+    // count completed weeks
+    let weeks = 0;
+    for(let w=1;w<=16;w++){
+      const tasks = document.querySelectorAll(`.wtask[data-week="${w}"]`);
+      if(tasks.length && Array.from(tasks).every(c=>c.checked)) weeks++;
+    }
+    document.getElementById('sWeeks').textContent = weeks;
+    // sync phase bars from task completion
+    const phaseTasks = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]];
+    const arr = phaseTasks.map(weeks => {
+      let total=0,done=0;
+      weeks.forEach(w=>{ const t=document.querySelectorAll(`.wtask[data-week="${w}"]`); total+=t.length; done+=Array.from(t).filter(c=>c.checked).length; });
+      return total ? Math.round((done/total)*100) : 0;
+    });
+    updatePhaseUI(arr);
+  }
+
+  // ── Habit tracker ──
+  function initHabit() {
+    const grid = document.getElementById('habitGrid');
+    for(let i=1;i<=30;i++){
+      const d = document.createElement('div');
+      d.className='habit-day'; d.textContent=i; d.id='hd'+i;
+      if(localStorage.getItem('mp_habit_'+i)==='true') d.classList.add('done');
+      d.addEventListener('click',()=>{
+        d.classList.toggle('done');
+        localStorage.setItem('mp_habit_'+i, d.classList.contains('done'));
+        updateHabitCounter();
+      });
+      grid.appendChild(d);
+    }
+    updateHabitCounter();
+  }
+  function updateHabitCounter() {
+    const done = document.querySelectorAll('.habit-day.done').length;
+    document.getElementById('habitCounter').textContent = 'Days Focused: '+done+' / 30';
+  }
+  function resetHabit() {
+    document.querySelectorAll('.habit-day').forEach(d=>{
+      d.classList.remove('done'); localStorage.setItem('mp_habit_'+d.textContent,false);
+    });
+    updateHabitCounter();
+  }
+
+  // ── Init all ──
   window.addEventListener('load', () => {
-    updateUI(loadProgress());
+    updatePhaseUI(loadPhases());
+    initWeekTasks();
+    initHabit();
+    updateStickyBar();
   });
 </script>
 
