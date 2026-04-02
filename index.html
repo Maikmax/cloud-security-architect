@@ -1818,10 +1818,12 @@
   function setPhase(idx) {
     const arr = loadPhases();
     arr[idx] = arr[idx]===100?0:100;
-    savePhases(arr); updatePhaseUI(arr); updateStickyBar();
+    savePhases(arr);
+    updateStickyBar(); // updateStickyBar now merges saved phases, so no double-call needed
   }
   function resetProgress() {
-    savePhases([0,0,0,0]); updatePhaseUI([0,0,0,0]); updateStickyBar();
+    savePhases([0,0,0,0]);
+    updateStickyBar();
   }
 
   // ── Weekly task checkboxes ──
@@ -1875,12 +1877,14 @@
       if(tasks.length && Array.from(tasks).every(c=>c.checked)) weeks++;
     }
     document.getElementById('sWeeks').textContent = weeks;
-    // sync phase bars from task completion
+    // sync phase bars — merge manual override with task completion (take highest)
+    const savedPhases = loadPhases();
     const phaseTasks = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]];
-    const arr = phaseTasks.map(weeks => {
+    const arr = phaseTasks.map((weeks, i) => {
       let total=0,done=0;
       weeks.forEach(w=>{ const t=document.querySelectorAll(`.wtask[data-week="${w}"]`); total+=t.length; done+=Array.from(t).filter(c=>c.checked).length; });
-      return total ? Math.round((done/total)*100) : 0;
+      const taskPct = total ? Math.round((done/total)*100) : 0;
+      return Math.max(savedPhases[i], taskPct);
     });
     updatePhaseUI(arr);
   }
